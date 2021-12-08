@@ -29,13 +29,75 @@ namespace WindowsFormsApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.menuPrincipalMDI = new System.Windows.Forms.MenuStrip();
+            this.archivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gruposEntidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiposEntidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.entidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuPrincipalMDI.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuPrincipalMDI
+            // 
+            this.menuPrincipalMDI.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivosToolStripMenuItem});
+            this.menuPrincipalMDI.Location = new System.Drawing.Point(0, 0);
+            this.menuPrincipalMDI.Name = "menuPrincipalMDI";
+            this.menuPrincipalMDI.Size = new System.Drawing.Size(800, 24);
+            this.menuPrincipalMDI.TabIndex = 0;
+            this.menuPrincipalMDI.Text = "menuStrip1";
+            // 
+            // archivosToolStripMenuItem
+            // 
+            this.archivosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gruposEntidadesToolStripMenuItem,
+            this.tiposEntidadesToolStripMenuItem,
+            this.entidadesToolStripMenuItem});
+            this.archivosToolStripMenuItem.Name = "archivosToolStripMenuItem";
+            this.archivosToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.archivosToolStripMenuItem.Text = "Archivos";
+            // 
+            // gruposEntidadesToolStripMenuItem
+            // 
+            this.gruposEntidadesToolStripMenuItem.Name = "gruposEntidadesToolStripMenuItem";
+            this.gruposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gruposEntidadesToolStripMenuItem.Text = "Grupos Entidades";
+            // 
+            // tiposEntidadesToolStripMenuItem
+            // 
+            this.tiposEntidadesToolStripMenuItem.Name = "tiposEntidadesToolStripMenuItem";
+            this.tiposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tiposEntidadesToolStripMenuItem.Text = "Tipos Entidades";
+            // 
+            // entidadesToolStripMenuItem
+            // 
+            this.entidadesToolStripMenuItem.Name = "entidadesToolStripMenuItem";
+            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.entidadesToolStripMenuItem.Text = "Entidades";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.menuPrincipalMDI);
+            this.MainMenuStrip = this.menuPrincipalMDI;
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.menuPrincipalMDI.ResumeLayout(false);
+            this.menuPrincipalMDI.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip menuPrincipalMDI;
+        private System.Windows.Forms.ToolStripMenuItem archivosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gruposEntidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tiposEntidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entidadesToolStripMenuItem;
     }
 }
 
