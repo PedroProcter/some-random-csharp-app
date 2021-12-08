@@ -11,7 +11,7 @@ namespace CapaDatos
 {
     public class Datos
     {
-        private static string StringConnectionSQLServer= ConfigurationManager.ConnectionStrings["Test"].ToString();  // = "Server = DESKTOP-3B0O51K\\MYSERVER;DataBase=MiPrimeraVez;Integrated Security = true";
+        private static string StringConnectionSQLServer= ConfigurationManager.ConnectionStrings["WindowsFormsApp.Properties.Settings.StringConnectionSQLServer"].ToString();  // = "Server = DESKTOP-3B0O51K\\MYSERVER;DataBase=MiPrimeraVez;Integrated Security = true";
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
