@@ -62,18 +62,21 @@ namespace WindowsFormsApp
             this.gruposEntidadesToolStripMenuItem.Name = "gruposEntidadesToolStripMenuItem";
             this.gruposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gruposEntidadesToolStripMenuItem.Text = "Grupos Entidades";
+            this.gruposEntidadesToolStripMenuItem.Click += new System.EventHandler(this.gruposEntidadesToolStripMenuItem_Click);
             // 
             // tiposEntidadesToolStripMenuItem
             // 
             this.tiposEntidadesToolStripMenuItem.Name = "tiposEntidadesToolStripMenuItem";
             this.tiposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tiposEntidadesToolStripMenuItem.Text = "Tipos Entidades";
+            this.tiposEntidadesToolStripMenuItem.Click += new System.EventHandler(this.tiposEntidadesToolStripMenuItem_Click);
             // 
             // entidadesToolStripMenuItem
             // 
             this.entidadesToolStripMenuItem.Name = "entidadesToolStripMenuItem";
             this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.entidadesToolStripMenuItem.Text = "Entidades";
+            this.entidadesToolStripMenuItem.Click += new System.EventHandler(this.entidadesToolStripMenuItem_Click);
             // 
             // Form1
             // 
