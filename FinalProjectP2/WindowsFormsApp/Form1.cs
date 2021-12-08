@@ -37,5 +37,10 @@ namespace WindowsFormsApp
             entidades.Visible = true;
             entidades.Activate();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            toolStripStatusLabel1.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }
