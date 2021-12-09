@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp
+namespace WindowsFormsApp.subOptionsSistema
 {
-    public partial class Login : Form
+    public partial class Acercade : Form
     {
-        public Login()
+        public Acercade()
         {
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void Acercade_Load(object sender, EventArgs e)
         {
 
         }

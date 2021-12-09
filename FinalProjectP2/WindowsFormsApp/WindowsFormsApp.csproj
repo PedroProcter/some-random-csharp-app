@@ -64,6 +64,12 @@
     <Compile Include="subOptionsArchivos\GruposEntidadesPopup.Designer.cs">
       <DependentUpon>GruposEntidadesPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="subOptionsSistema\Acercade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subOptionsSistema\Acercade.Designer.cs">
+      <DependentUpon>Acercade.cs</DependentUpon>
+    </Compile>
     <Compile Include="subOptionsSistema\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subOptionsArchivos\GruposEntidadesPopup.resx">
       <DependentUpon>GruposEntidadesPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subOptionsSistema\Acercade.resx">
+      <DependentUpon>Acercade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="subOptionsSistema\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

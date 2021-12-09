@@ -42,5 +42,23 @@ namespace WindowsFormsApp
         {
             toolStripStatusLabel1.Text = DateTime.Now.ToLongTimeString();
         }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.ShowDialog();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            MessageBox.Show("Ha salido del sistema");
+            this.Close();
+        }
     }
 }
