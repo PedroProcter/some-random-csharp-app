@@ -38,20 +38,25 @@ namespace WindowsFormsApp
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.sistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipalMDI.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPrincipalMDI
             // 
             this.menuPrincipalMDI.Dock = System.Windows.Forms.DockStyle.None;
             this.menuPrincipalMDI.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivosToolStripMenuItem});
+            this.archivosToolStripMenuItem,
+            this.sistemaToolStripMenuItem});
             this.menuPrincipalMDI.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipalMDI.Name = "menuPrincipalMDI";
-            this.menuPrincipalMDI.Size = new System.Drawing.Size(73, 24);
+            this.menuPrincipalMDI.Size = new System.Drawing.Size(133, 24);
             this.menuPrincipalMDI.TabIndex = 0;
             this.menuPrincipalMDI.Text = "menuStrip1";
             // 
@@ -68,30 +73,31 @@ namespace WindowsFormsApp
             // gruposEntidadesToolStripMenuItem
             // 
             this.gruposEntidadesToolStripMenuItem.Name = "gruposEntidadesToolStripMenuItem";
-            this.gruposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.gruposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gruposEntidadesToolStripMenuItem.Text = "Grupos Entidades";
             this.gruposEntidadesToolStripMenuItem.Click += new System.EventHandler(this.gruposEntidadesToolStripMenuItem_Click);
             // 
             // tiposEntidadesToolStripMenuItem
             // 
             this.tiposEntidadesToolStripMenuItem.Name = "tiposEntidadesToolStripMenuItem";
-            this.tiposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.tiposEntidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tiposEntidadesToolStripMenuItem.Text = "Tipos Entidades";
             this.tiposEntidadesToolStripMenuItem.Click += new System.EventHandler(this.tiposEntidadesToolStripMenuItem_Click);
             // 
             // entidadesToolStripMenuItem
             // 
             this.entidadesToolStripMenuItem.Name = "entidadesToolStripMenuItem";
-            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.entidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.entidadesToolStripMenuItem.Text = "Entidades";
             this.entidadesToolStripMenuItem.Click += new System.EventHandler(this.entidadesToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(73, 0);
+            this.statusStrip1.Location = new System.Drawing.Point(710, 2);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.statusStrip1.Size = new System.Drawing.Size(66, 22);
@@ -110,21 +116,57 @@ namespace WindowsFormsApp
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // flowLayoutPanel1
+            // tableLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.menuPrincipalMDI);
-            this.flowLayoutPanel1.Controls.Add(this.statusStrip1);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 1);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(799, 26);
-            this.flowLayoutPanel1.TabIndex = 3;
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.menuPrincipalMDI, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.statusStrip1, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(797, 26);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
+            // sistemaToolStripMenuItem
+            // 
+            this.sistemaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.loginToolStripMenuItem,
+            this.acercaDeToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
+            this.sistemaToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.sistemaToolStripMenuItem.Text = "Sistema";
+            // 
+            // loginToolStripMenuItem
+            // 
+            this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
+            this.loginToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loginToolStripMenuItem.Text = "Login";
+            // 
+            // acercaDeToolStripMenuItem
+            // 
+            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.acercaDeToolStripMenuItem.Text = "Acerca de...";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.MainMenuStrip = this.menuPrincipalMDI;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -132,8 +174,8 @@ namespace WindowsFormsApp
             this.menuPrincipalMDI.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -148,7 +190,11 @@ namespace WindowsFormsApp
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ToolStripMenuItem sistemaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }
 
