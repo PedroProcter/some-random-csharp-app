@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp.subOptionsSistema;
 
 namespace WindowsFormsApp
 {
@@ -51,8 +52,11 @@ namespace WindowsFormsApp
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            Acercade acercade1 = new Acercade();
+            acercade1.Show();
         }
+
+     
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
