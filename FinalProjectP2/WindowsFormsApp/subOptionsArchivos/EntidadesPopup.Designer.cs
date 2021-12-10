@@ -643,7 +643,6 @@ namespace WindowsFormsApp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EntidadesPopup";
             this.Text = "Entidades";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EntidadesPopup_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

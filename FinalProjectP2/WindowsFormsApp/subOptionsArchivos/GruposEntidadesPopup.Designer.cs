@@ -286,7 +286,6 @@ namespace WindowsFormsApp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "GruposEntidadesPopup";
             this.Text = "GruposEntidades";
-            this.Load += new System.EventHandler(this.GruposEntidadesPopup_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
