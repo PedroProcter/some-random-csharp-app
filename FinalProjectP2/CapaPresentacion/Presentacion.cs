@@ -8,7 +8,7 @@ namespace CapaPresentacion
 {
     public class Presentacion
     {
-        public void ConversionDatos()
+        public int ConversionDatos(int value, string TipoDocumento)
         {
             /*   AQUI CON ESTE METODO RESIVIRE COMO PARAMETRO EL VALOR INTRODUCIDO POR EL NUMERO DE IDENTIDAD Y EL TIPO DE 
              *   DOCUMENTO Y SEGUN EL TIPO SE 
@@ -19,6 +19,24 @@ namespace CapaPresentacion
              * 
              * 
              */
+            int numDocumento
+            switch (TipoDocumento)
+            {
+                case "RNC"
+                    numDocumeto = value.ToString("###-#######-#");
+                break;
+
+                case "RNC"
+                    numDocumeto = value.ToString("#-##-########");
+                break;
+
+                case "RNC"
+                    numDocumeto = value.ToString("#########");
+                break;
+               
+            }
+            return numDocumento;
+
         }
     }
 }
