@@ -84,6 +84,12 @@
     <Compile Include="subOptionsArchivos\TiposEntidadesPopup.Designer.cs">
       <DependentUpon>TiposEntidadesPopup.cs</DependentUpon>
     </Compile>
+    <Compile Include="subOptionsSistema\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subOptionsSistema\Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="subOptionsArchivos\EntidadesPopup.resx">
       <DependentUpon>EntidadesPopup.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="subOptionsArchivos\TiposEntidadesPopup.resx">
       <DependentUpon>TiposEntidadesPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subOptionsSistema\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

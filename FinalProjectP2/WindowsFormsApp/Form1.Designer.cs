@@ -57,7 +57,7 @@ namespace WindowsFormsApp
             this.sistemaToolStripMenuItem});
             this.menuPrincipalMDI.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipalMDI.Name = "menuPrincipalMDI";
-            this.menuPrincipalMDI.Size = new System.Drawing.Size(314, 28);
+            this.menuPrincipalMDI.Size = new System.Drawing.Size(162, 28);
             this.menuPrincipalMDI.TabIndex = 0;
             this.menuPrincipalMDI.Text = "menuStrip1";
             // 
@@ -157,11 +157,11 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.Controls.Add(this.menuPrincipalMDI, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.statusStrip1, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 1);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -174,9 +174,8 @@ namespace WindowsFormsApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuPrincipalMDI;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuPrincipalMDI.ResumeLayout(false);

@@ -36,6 +36,7 @@ namespace WindowsFormsApp.subOptionsSistema
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,12 +83,12 @@ namespace WindowsFormsApp.subOptionsSistema
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 17);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Johanny Tavares";
+            this.label5.Text = "Johanny Tavarez";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 137);
+            this.label6.Location = new System.Drawing.Point(3, 144);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 17);
             this.label6.TabIndex = 5;
@@ -104,15 +105,26 @@ namespace WindowsFormsApp.subOptionsSistema
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(759, 385);
             this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(658, 405);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 33);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "SALIR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Acercade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Acercade";
             this.Text = "Acerca de";
             this.Load += new System.EventHandler(this.Acercade_Load);
@@ -132,5 +144,6 @@ namespace WindowsFormsApp.subOptionsSistema
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }
