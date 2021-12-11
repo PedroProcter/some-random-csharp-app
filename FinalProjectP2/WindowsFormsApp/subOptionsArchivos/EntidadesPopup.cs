@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatos;
+using Negocio;
 
 namespace WindowsFormsApp
 {
     public partial class EntidadesPopup : Form
     {
         private Datos datos = new Datos();
+        private CNegocio negocio = new CNegocio();
+        byte editar= 0;
+        int id;
 
 
         public EntidadesPopup()
@@ -23,25 +27,100 @@ namespace WindowsFormsApp
 
         private void clearControls()
         {
-            //descripcionTextBox.Text = "";
-            //ComentarioTextBox.Text = "";
-            //statusCheckBox.Checked = false;
-            //eliminableCheckBox.Checked = false;
-            //fechaRegistroDatePicker.Text = "";
+            //limpiar combo box
+
+            txtDescripcion.Clear();
+            txtDireccion.Clear();
+            txtLocalidad.Clear();
+           // cbIdTipoEntidad.Clear();
+            //cbTipoDocumento.Clear();
+            txtNumDocumento.Clear();
+            txtTelefono.Clear();
+            txtWeb.Clear();
+            txtFacebook.Clear();
+            txtInstagram.Clear();
+            txtTwitter.Clear();
+            txtTikTok.Clear();
+            //cbIdGrupoEntidad.Clear();
+            //cbIdTipoEntidad.
+            txtLimiteCredito.Clear();
+            txtUserName.Clear();
+            txtPassword.Clear();
+            txtComentario.Clear();
+            dateTimePicker1.Value = DateTime.Today;
+        }
+
+        public void MostrarTodo()
+        {
+            Datos dt = new Datos();
+            dataGridView1.DataSource = dt.ListarEntidades();
         }
 
         private void EntidadesPopup_Load(object sender, EventArgs e)
         {
-            gridEntidades.DataSource = datos.ListarEntidades();
+            MostrarTodo();
+
+            cbIdGrupoEntidad.DataSource = datos.cargarComboBox();
+            cbIdGrupoEntidad.ValueMember = Datos.Value;
+            cbIdGrupoEntidad.DisplayMember = Datos.Value;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             string status = "Inactiva";
             int noEliminable = 0;
+            string Rol = "User"; //crearle sentencias if segun cada opcion
             if (statusCheckBox.Checked) status = "Activa";
             if (eliminableCheckBox.Checked) noEliminable = 1;
-            //este es el boton de guardar
+            if (rbAdmin.Checked) Rol = "Admin";
+            if (rbSupervisor.Checked) Rol = "supervisor";
+            int limite = Convert.ToInt32(txtLimiteCredito.Text);
+           
+            try
+            {
+                if (editar == 0)
+                {
+                    if (Convert.ToInt32(negocio.ValidarLimiteCredito(limite)) > 0)
+                     {
+                        datos.InsertarEntidades(txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbTipoEntidad.Text, cbTipoDocumento.Text, Convert.ToInt32(txtNumDocumento.Text), txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), txtUserName.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
+                    }
+                     else
+                        MessageBox.Show(negocio.ValidarLimiteCredito(limite));
+                    
+
+                }
+
+                else
+                {
+                    try
+                    {
+                        if (Convert.ToInt32(negocio.ValidarLimiteCredito(limite)) > 0)
+                        {
+                            datos.UpdateEntidades(id, txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbTipoEntidad.Text, cbTipoDocumento.Text, Convert.ToInt32(txtNumDocumento.Text), txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), txtUserName.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
+                            editar = 0;
+                        }
+
+                        else
+                            MessageBox.Show(negocio.ValidarLimiteCredito(limite));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                        
+                    }
+
+                }
+
+                clearControls();
+                MostrarTodo();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                
+            }
+
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
@@ -49,48 +128,68 @@ namespace WindowsFormsApp
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            editar = 1;
-            id = Convert.ToInt32(gridEntidades.CurrentRow.Cells["IdTipoEntidad"].Value.ToString());
-            dateTimePicker1.Value = Convert.ToDateTime(gridEntidades.CurrentRow.Cells["FechaRegistro"].Value.ToString());
-            txtComentario.Value = gridEntidades.CurrentRow.Cells["Comentario"].Value.ToString();
-            txtDescripcion.Value = gridEntidades.CurrentRow.Cells["Descripcion"].Value.ToString();
-            cbIdTipoEntidad.Value= Convert.ToInt32(gridEntidades.CurrentRow.Cells["IdGrupoEntidad"].Value.ToString());
-            txtDireccion.Value = gridEntidades.CurrentRow.Cells["Direccion"].Value.ToString();
-            txtLocalidad.Value = gridEntidades.CurrentRow.Cells["Localidad"].Value.ToString();
-            cbTipoDocumento.Value = Convert.ToInt32(gridEntidades.CurrentRow.Cells["TipoDocumento"].Value.ToString());
-            txtTelefono.Value = gridEntidades.CurrentRow.Cells["Telefonos"].Value.ToString();
-            txtWeb.Value = gridEntidades.CurrentRow.Cells["URLPaginaWeb"].Value.ToString();
-            txtFacebook.Value = gridEntidades.CurrentRow.Cells["URLFacebook"].Value.ToString();
-            txtInstagram.Value = gridEntidades.CurrentRow.Cells["URLInstagram"].Value.ToString();
-            txtTwitter.Value = gridEntidades.CurrentRow.Cells["URLTwitter"].Value.ToString();
-            txtTikTok.Value = gridEntidades.CurrentRow.Cells["URLTikTok"].Value.ToString();
-            txtUserName.Value = gridEntidades.CurrentRow.Cells["UserNameEntidad"].Value.ToString();
-            txtPassword.Value = gridEntidades.CurrentRow.Cells["PassworEntidad"].Value.ToString();
-            status.Value = gridEntidades.CurrentRow.Cells["Estatus"].Value.ToString();
-            txtNumDocumento.Value= Convert.ToInt32(gridEntidades.CurrentRow.Cells["NumeroDocumento"].Value.ToString());
-            noEliminable.Value = Convert.ToInt32(gridEntidades.CurrentRow.Cells["NoEliminable"].Value.ToString());
-            txtLimiteCredito.Value= Convert.ToInt32(gridEntidades.CurrentRow.Cells["LimiteCredito"].Value.ToString());
-            cbIdGrupoEntidad.Value =Convert.ToInt32( gridEntidades.CurrentRow.Cells["IdGrupoEntidad"].Value.ToString());
-            if (gridEntidades.CurrentRow.Cells["Estatus"].Value.ToString() == "Activa")
-                statusCheckBox.Checked = true;
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                
+                find_textBox.Text = dataGridView1.CurrentRow.Cells["IdEntidad"].Value.ToString();
+                datos.EliminarEntidades(Convert.ToInt32(find_textBox.Text));
+                MessageBox.Show("Eliminado correctamente");
 
+                MostrarTodo();
+            }
             else
-                statusCheckBox.Checked = false;
-
-            if (gridEntidades.CurrentRow.Cells["NoEliminable"].Value.ToString() == "1")
-                eliminableCheckBox.Checked = true;
-
-            else
-                eliminableCheckBox.Checked = false;
+                MessageBox.Show("seleccione una fila por favor");
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+           
+            try
+            {
+                Datos datos1 = new Datos();
+                dataGridView1.DataSource = datos1.BuscarEntidades(Convert.ToInt32(find_textBox.Text));
+                clearControls();
 
+                if (dataGridView1.RowCount <= 1)
+                {
+                    MessageBox.Show("no se encontro ningun archivo, revise el nombre y vuelvalo a escribir");
+                    
+                    MostrarTodo();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se pudo continuar la busqueda porque: " + ex);
+                MostrarTodo();
+            }
         }
 
-       
+        private void cbTipoEntidad_Click(object sender, EventArgs e)
+        {
+            Datos datos = new Datos();
+            datos.cargarComboBox2(Convert.ToInt32(cbIdGrupoEntidad.Text));
+
+                cbIdTipoEntidad.ValueMember = Datos.Value2 ;
+                cbIdTipoEntidad.DisplayMember = Datos.Value2;
+        }
+
+        private void cbIdTipoEntidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Datos datos = new Datos();
+
+            datos.cargarComboBox2(Convert.ToInt32(cbIdGrupoEntidad.Text));
+
+            //cbIdTipoEntidad.ValueMember = Datos.Value2;
+            cbIdTipoEntidad.DisplayMember = Datos.Value2;
+        }
+
+        private void cbIdGrupoEntidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
