@@ -41,8 +41,8 @@ namespace WindowsFormsApp
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.eliminableCheckBox = new System.Windows.Forms.CheckBox();
+            this.statusCheckBox = new System.Windows.Forms.CheckBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.descripcion_label = new System.Windows.Forms.Label();
             this.comentario_label = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.42105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.57895F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 378F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
@@ -88,7 +88,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(174, 0);
+            this.label1.Location = new System.Drawing.Point(173, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(372, 30);
             this.label1.TabIndex = 2;
@@ -115,7 +115,7 @@ namespace WindowsFormsApp
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Location = new System.Drawing.Point(51, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
+            this.textBox1.Size = new System.Drawing.Size(116, 20);
             this.textBox1.TabIndex = 1;
             // 
             // tabControl1
@@ -173,6 +173,7 @@ namespace WindowsFormsApp
             this.button4.TabIndex = 45;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox1
             // 
@@ -202,32 +203,32 @@ namespace WindowsFormsApp
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.checkBox2);
-            this.panel5.Controls.Add(this.checkBox1);
+            this.panel5.Controls.Add(this.eliminableCheckBox);
+            this.panel5.Controls.Add(this.statusCheckBox);
             this.panel5.Location = new System.Drawing.Point(24, 319);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(120, 46);
             this.panel5.TabIndex = 26;
             // 
-            // checkBox2
+            // eliminableCheckBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(0, 26);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(87, 17);
-            this.checkBox2.TabIndex = 29;
-            this.checkBox2.Text = "NoEliminable";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.eliminableCheckBox.AutoSize = true;
+            this.eliminableCheckBox.Location = new System.Drawing.Point(0, 26);
+            this.eliminableCheckBox.Name = "eliminableCheckBox";
+            this.eliminableCheckBox.Size = new System.Drawing.Size(87, 17);
+            this.eliminableCheckBox.TabIndex = 29;
+            this.eliminableCheckBox.Text = "NoEliminable";
+            this.eliminableCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // statusCheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(0, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(56, 17);
-            this.checkBox1.TabIndex = 28;
-            this.checkBox1.Text = "Status";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.statusCheckBox.AutoSize = true;
+            this.statusCheckBox.Location = new System.Drawing.Point(0, 3);
+            this.statusCheckBox.Name = "statusCheckBox";
+            this.statusCheckBox.Size = new System.Drawing.Size(56, 17);
+            this.statusCheckBox.TabIndex = 28;
+            this.statusCheckBox.Text = "Status";
+            this.statusCheckBox.UseVisualStyleBackColor = true;
             // 
             // textBox8
             // 
@@ -339,6 +340,7 @@ namespace WindowsFormsApp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "TiposEntidadesPopup";
             this.Text = "TiposEntidadesPopup";
+            this.Load += new System.EventHandler(this.TiposEntidadesPopup_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -363,8 +365,8 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox eliminableCheckBox;
+        private System.Windows.Forms.CheckBox statusCheckBox;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label descripcion_label;
         private System.Windows.Forms.Label comentario_label;

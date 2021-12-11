@@ -14,7 +14,7 @@ namespace CapaDatos
         public static string Value, Display;
         string[] array = new string[18]; 
 
-        private static string StringConnectionSQLServer= ConfigurationManager.ConnectionStrings["WindowsFormsApp.Properties.Settings.StringConnectionSQLServer"].ToString();  // = "Server = DESKTOP-3B0O51K\\MYSERVER;DataBase=MiPrimeraVez;Integrated Security = true";
+        private static string StringConnectionSQLServer=    "Server = DESKTOP-3B0O51K\\MYSERVER;DataBase=SellPoint;Integrated Security = true"; //ConfigurationManager.ConnectionStrings["StringConnectionSQLServer"].ToString();
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();

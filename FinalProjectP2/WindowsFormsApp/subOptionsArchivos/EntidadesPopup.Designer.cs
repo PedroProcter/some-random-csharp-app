@@ -40,8 +40,8 @@ namespace WindowsFormsApp
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.eliminableCheckBox = new System.Windows.Forms.CheckBox();
+            this.statusCheckBox = new System.Windows.Forms.CheckBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -107,7 +107,7 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.75221F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.24779F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 369F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 190F));
             this.tableLayoutPanel1.Controls.Add(this.find_textBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
@@ -125,7 +125,7 @@ namespace WindowsFormsApp
             this.find_textBox.Location = new System.Drawing.Point(70, 6);
             this.find_textBox.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.find_textBox.Name = "find_textBox";
-            this.find_textBox.Size = new System.Drawing.Size(115, 20);
+            this.find_textBox.Size = new System.Drawing.Size(114, 20);
             this.find_textBox.TabIndex = 3;
             // 
             // button1
@@ -146,7 +146,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(191, 0);
+            this.label1.Location = new System.Drawing.Point(190, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(363, 31);
             this.label1.TabIndex = 0;
@@ -233,6 +233,7 @@ namespace WindowsFormsApp
             this.button4.TabIndex = 82;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox3
             // 
@@ -252,32 +253,33 @@ namespace WindowsFormsApp
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.checkBox3);
-            this.panel6.Controls.Add(this.checkBox4);
+            this.panel6.Controls.Add(this.eliminableCheckBox);
+            this.panel6.Controls.Add(this.statusCheckBox);
             this.panel6.Location = new System.Drawing.Point(608, 338);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(120, 46);
             this.panel6.TabIndex = 79;
             // 
-            // checkBox3
+            // eliminableCheckBox
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(0, 26);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(87, 17);
-            this.checkBox3.TabIndex = 29;
-            this.checkBox3.Text = "NoEliminable";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.eliminableCheckBox.AutoSize = true;
+            this.eliminableCheckBox.Location = new System.Drawing.Point(0, 26);
+            this.eliminableCheckBox.Name = "eliminableCheckBox";
+            this.eliminableCheckBox.Size = new System.Drawing.Size(87, 17);
+            this.eliminableCheckBox.TabIndex = 29;
+            this.eliminableCheckBox.Text = "NoEliminable";
+            this.eliminableCheckBox.UseVisualStyleBackColor = true;
+            this.eliminableCheckBox.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // checkBox4
+            // statusCheckBox
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(0, 3);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(56, 17);
-            this.checkBox4.TabIndex = 28;
-            this.checkBox4.Text = "Status";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.statusCheckBox.AutoSize = true;
+            this.statusCheckBox.Location = new System.Drawing.Point(0, 3);
+            this.statusCheckBox.Name = "statusCheckBox";
+            this.statusCheckBox.Size = new System.Drawing.Size(56, 17);
+            this.statusCheckBox.TabIndex = 28;
+            this.statusCheckBox.Text = "Status";
+            this.statusCheckBox.UseVisualStyleBackColor = true;
             // 
             // textBox5
             // 
@@ -723,6 +725,7 @@ namespace WindowsFormsApp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EntidadesPopup";
             this.Text = "Entidades";
+            this.Load += new System.EventHandler(this.EntidadesPopup_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -756,8 +759,8 @@ namespace WindowsFormsApp
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox eliminableCheckBox;
+        private System.Windows.Forms.CheckBox statusCheckBox;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox6;

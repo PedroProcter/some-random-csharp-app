@@ -31,6 +31,8 @@ namespace WindowsFormsApp
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.clearControlsButton = new System.Windows.Forms.Button();
+            this.fechaRegistroDatePicker = new System.Windows.Forms.DateTimePicker();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -50,8 +52,6 @@ namespace WindowsFormsApp
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.fechaRegistroDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.clearControlsButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -95,6 +95,25 @@ namespace WindowsFormsApp
             this.tabPage1.Size = new System.Drawing.Size(742, 426);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Modificador";
+            // 
+            // clearControlsButton
+            // 
+            this.clearControlsButton.Location = new System.Drawing.Point(482, 384);
+            this.clearControlsButton.Name = "clearControlsButton";
+            this.clearControlsButton.Size = new System.Drawing.Size(75, 23);
+            this.clearControlsButton.TabIndex = 30;
+            this.clearControlsButton.Text = "Clear";
+            this.clearControlsButton.UseVisualStyleBackColor = true;
+            this.clearControlsButton.Click += new System.EventHandler(this.clearControlsButton_Click);
+            // 
+            // fechaRegistroDatePicker
+            // 
+            this.fechaRegistroDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaRegistroDatePicker.Location = new System.Drawing.Point(24, 137);
+            this.fechaRegistroDatePicker.Name = "fechaRegistroDatePicker";
+            this.fechaRegistroDatePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.fechaRegistroDatePicker.Size = new System.Drawing.Size(146, 20);
+            this.fechaRegistroDatePicker.TabIndex = 29;
             // 
             // button3
             // 
@@ -246,7 +265,7 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.42105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.57895F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 418F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
@@ -263,7 +282,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(177, 0);
+            this.label1.Location = new System.Drawing.Point(176, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(412, 30);
             this.label1.TabIndex = 2;
@@ -290,27 +309,8 @@ namespace WindowsFormsApp
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Location = new System.Drawing.Point(52, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(119, 20);
+            this.textBox1.Size = new System.Drawing.Size(118, 20);
             this.textBox1.TabIndex = 1;
-            // 
-            // fechaRegistroDatePicker
-            // 
-            this.fechaRegistroDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaRegistroDatePicker.Location = new System.Drawing.Point(24, 137);
-            this.fechaRegistroDatePicker.Name = "fechaRegistroDatePicker";
-            this.fechaRegistroDatePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.fechaRegistroDatePicker.Size = new System.Drawing.Size(146, 20);
-            this.fechaRegistroDatePicker.TabIndex = 29;
-            // 
-            // clearControlsButton
-            // 
-            this.clearControlsButton.Location = new System.Drawing.Point(482, 384);
-            this.clearControlsButton.Name = "clearControlsButton";
-            this.clearControlsButton.Size = new System.Drawing.Size(75, 23);
-            this.clearControlsButton.TabIndex = 30;
-            this.clearControlsButton.Text = "Clear";
-            this.clearControlsButton.UseVisualStyleBackColor = true;
-            this.clearControlsButton.Click += new System.EventHandler(this.clearControlsButton_Click);
             // 
             // GruposEntidadesPopup
             // 
@@ -323,6 +323,7 @@ namespace WindowsFormsApp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "GruposEntidadesPopup";
             this.Text = "GruposEntidades";
+            this.Load += new System.EventHandler(this.GruposEntidadesPopup_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

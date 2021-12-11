@@ -30,3 +30,6 @@ C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\De
 C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CoreCompileInputs.cache
 C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.exe
 C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.pdb
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\CapaDatos.dll
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\CapaDatos.pdb
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CopyComplete
