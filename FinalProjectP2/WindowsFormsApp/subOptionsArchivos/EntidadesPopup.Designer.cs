@@ -61,13 +61,11 @@ namespace WindowsFormsApp
             this.label17 = new System.Windows.Forms.Label();
             this.txtWeb = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.rbUser = new System.Windows.Forms.RadioButton();
             this.label19 = new System.Windows.Forms.Label();
             this.rbSupervisor = new System.Windows.Forms.RadioButton();
             this.rbAdmin = new System.Windows.Forms.RadioButton();
-            this.label20 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.txtComentario = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -87,6 +85,9 @@ namespace WindowsFormsApp
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.btClean = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TabPages.SuspendLayout();
@@ -166,6 +167,9 @@ namespace WindowsFormsApp
             // TabPages
             // 
             this.TabPages.BackColor = System.Drawing.SystemColors.Control;
+            this.TabPages.Controls.Add(this.btClean);
+            this.TabPages.Controls.Add(this.txtPassword);
+            this.TabPages.Controls.Add(this.label20);
             this.TabPages.Controls.Add(this.txtUserName);
             this.TabPages.Controls.Add(this.label3);
             this.TabPages.Controls.Add(this.txtLimiteCredito);
@@ -190,9 +194,7 @@ namespace WindowsFormsApp
             this.TabPages.Controls.Add(this.label17);
             this.TabPages.Controls.Add(this.txtWeb);
             this.TabPages.Controls.Add(this.label18);
-            this.TabPages.Controls.Add(this.txtPassword);
             this.TabPages.Controls.Add(this.panel7);
-            this.TabPages.Controls.Add(this.label20);
             this.TabPages.Controls.Add(this.label23);
             this.TabPages.Controls.Add(this.txtComentario);
             this.TabPages.Controls.Add(this.label24);
@@ -217,7 +219,7 @@ namespace WindowsFormsApp
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(572, 199);
+            this.txtUserName.Location = new System.Drawing.Point(433, 120);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(128, 20);
             this.txtUserName.TabIndex = 90;
@@ -225,7 +227,7 @@ namespace WindowsFormsApp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(569, 183);
+            this.label3.Location = new System.Drawing.Point(430, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 89;
@@ -233,7 +235,7 @@ namespace WindowsFormsApp
             // 
             // txtLimiteCredito
             // 
-            this.txtLimiteCredito.Location = new System.Drawing.Point(572, 142);
+            this.txtLimiteCredito.Location = new System.Drawing.Point(433, 70);
             this.txtLimiteCredito.Name = "txtLimiteCredito";
             this.txtLimiteCredito.Size = new System.Drawing.Size(128, 20);
             this.txtLimiteCredito.TabIndex = 88;
@@ -241,7 +243,7 @@ namespace WindowsFormsApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(569, 126);
+            this.label2.Location = new System.Drawing.Point(430, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 13);
             this.label2.TabIndex = 87;
@@ -250,7 +252,7 @@ namespace WindowsFormsApp
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(433, 71);
+            this.dateTimePicker1.Location = new System.Drawing.Point(596, 136);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(128, 20);
             this.dateTimePicker1.TabIndex = 86;
@@ -259,13 +261,15 @@ namespace WindowsFormsApp
             // 
             this.cbTipoDocumento.FormattingEnabled = true;
             this.cbTipoDocumento.Items.AddRange(new object[] {
+            "Selecciona tipo documento",
             "RNC",
             "Cedula",
             "Pasaporte"});
-            this.cbTipoDocumento.Location = new System.Drawing.Point(18, 173);
+            this.cbTipoDocumento.Location = new System.Drawing.Point(18, 120);
             this.cbTipoDocumento.Name = "cbTipoDocumento";
             this.cbTipoDocumento.Size = new System.Drawing.Size(128, 21);
             this.cbTipoDocumento.TabIndex = 85;
+            this.cbTipoDocumento.Text = "Selecciona tipo doc";
             // 
             // cbTipoEntidad
             // 
@@ -273,15 +277,16 @@ namespace WindowsFormsApp
             this.cbTipoEntidad.Items.AddRange(new object[] {
             "Fisica",
             "Juridica"});
-            this.cbTipoEntidad.Location = new System.Drawing.Point(433, 120);
+            this.cbTipoEntidad.Location = new System.Drawing.Point(156, 176);
             this.cbTipoEntidad.Name = "cbTipoEntidad";
             this.cbTipoEntidad.Size = new System.Drawing.Size(128, 21);
             this.cbTipoEntidad.TabIndex = 84;
+            this.cbTipoEntidad.Text = "Selecciona tipo entidad";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(15, 157);
+            this.label22.Location = new System.Drawing.Point(15, 104);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(101, 13);
             this.label22.TabIndex = 23;
@@ -290,7 +295,7 @@ namespace WindowsFormsApp
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(430, 105);
+            this.label21.Location = new System.Drawing.Point(153, 157);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(82, 13);
             this.label21.TabIndex = 23;
@@ -313,21 +318,23 @@ namespace WindowsFormsApp
             this.cbIdTipoEntidad.Name = "cbIdTipoEntidad";
             this.cbIdTipoEntidad.Size = new System.Drawing.Size(128, 21);
             this.cbIdTipoEntidad.TabIndex = 81;
+            this.cbIdTipoEntidad.Text = "Selecciona un tipo";
             // 
             // cbIdGrupoEntidad
             // 
             this.cbIdGrupoEntidad.FormattingEnabled = true;
-            this.cbIdGrupoEntidad.Location = new System.Drawing.Point(18, 20);
+            this.cbIdGrupoEntidad.Location = new System.Drawing.Point(18, 21);
             this.cbIdGrupoEntidad.Name = "cbIdGrupoEntidad";
             this.cbIdGrupoEntidad.Size = new System.Drawing.Size(128, 21);
             this.cbIdGrupoEntidad.TabIndex = 80;
+            this.cbIdGrupoEntidad.Text = "Selecciona un grupo";
             this.cbIdGrupoEntidad.Leave += new System.EventHandler(this.cbIdGrupoEntidad_Leave);
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.eliminableCheckBox);
             this.panel6.Controls.Add(this.statusCheckBox);
-            this.panel6.Location = new System.Drawing.Point(433, 150);
+            this.panel6.Location = new System.Drawing.Point(596, 176);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(128, 46);
             this.panel6.TabIndex = 79;
@@ -436,18 +443,11 @@ namespace WindowsFormsApp
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(430, 54);
+            this.label18.Location = new System.Drawing.Point(593, 119);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(79, 13);
             this.label18.TabIndex = 69;
             this.label18.Text = "Fecha Registro";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(18, 126);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(128, 20);
-            this.txtPassword.TabIndex = 66;
             // 
             // panel7
             // 
@@ -488,7 +488,6 @@ namespace WindowsFormsApp
             this.rbSupervisor.Name = "rbSupervisor";
             this.rbSupervisor.Size = new System.Drawing.Size(75, 17);
             this.rbSupervisor.TabIndex = 1;
-            this.rbSupervisor.TabStop = true;
             this.rbSupervisor.Text = "Supervisor";
             this.rbSupervisor.UseVisualStyleBackColor = true;
             // 
@@ -499,18 +498,8 @@ namespace WindowsFormsApp
             this.rbAdmin.Name = "rbAdmin";
             this.rbAdmin.Size = new System.Drawing.Size(54, 17);
             this.rbAdmin.TabIndex = 0;
-            this.rbAdmin.TabStop = true;
             this.rbAdmin.Text = "Admin";
             this.rbAdmin.UseVisualStyleBackColor = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(15, 110);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(92, 13);
-            this.label20.TabIndex = 64;
-            this.label20.Text = "Password Entidad";
             // 
             // label23
             // 
@@ -559,7 +548,7 @@ namespace WindowsFormsApp
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(155, 176);
+            this.txtTelefono.Location = new System.Drawing.Point(156, 119);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(128, 20);
             this.txtTelefono.TabIndex = 55;
@@ -576,7 +565,7 @@ namespace WindowsFormsApp
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(152, 160);
+            this.label27.Location = new System.Drawing.Point(156, 101);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(49, 13);
             this.label27.TabIndex = 54;
@@ -584,7 +573,7 @@ namespace WindowsFormsApp
             // 
             // txtNumDocumento
             // 
-            this.txtNumDocumento.Location = new System.Drawing.Point(155, 21);
+            this.txtNumDocumento.Location = new System.Drawing.Point(18, 176);
             this.txtNumDocumento.Name = "txtNumDocumento";
             this.txtNumDocumento.Size = new System.Drawing.Size(128, 20);
             this.txtNumDocumento.TabIndex = 53;
@@ -593,7 +582,7 @@ namespace WindowsFormsApp
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(152, 5);
+            this.label29.Location = new System.Drawing.Point(15, 160);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(102, 13);
             this.label29.TabIndex = 52;
@@ -601,7 +590,7 @@ namespace WindowsFormsApp
             // 
             // txtLocalidad
             // 
-            this.txtLocalidad.Location = new System.Drawing.Point(155, 121);
+            this.txtLocalidad.Location = new System.Drawing.Point(156, 70);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(128, 20);
             this.txtLocalidad.TabIndex = 51;
@@ -609,7 +598,7 @@ namespace WindowsFormsApp
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(152, 54);
+            this.label30.Location = new System.Drawing.Point(156, 3);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(52, 13);
             this.label30.TabIndex = 48;
@@ -618,7 +607,7 @@ namespace WindowsFormsApp
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(152, 105);
+            this.label31.Location = new System.Drawing.Point(156, 54);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(53, 13);
             this.label31.TabIndex = 50;
@@ -626,7 +615,7 @@ namespace WindowsFormsApp
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(155, 70);
+            this.txtDireccion.Location = new System.Drawing.Point(156, 21);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(128, 20);
             this.txtDireccion.TabIndex = 49;
@@ -684,6 +673,32 @@ namespace WindowsFormsApp
             this.dataGridView1.Size = new System.Drawing.Size(734, 378);
             this.dataGridView1.TabIndex = 0;
             // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(433, 176);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(128, 20);
+            this.txtPassword.TabIndex = 92;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(430, 160);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(92, 13);
+            this.label20.TabIndex = 91;
+            this.label20.Text = "Password Entidad";
+            // 
+            // btClean
+            // 
+            this.btClean.Location = new System.Drawing.Point(565, 390);
+            this.btClean.Name = "btClean";
+            this.btClean.Size = new System.Drawing.Size(75, 23);
+            this.btClean.TabIndex = 93;
+            this.btClean.Text = "Clean";
+            this.btClean.UseVisualStyleBackColor = true;
+            this.btClean.Click += new System.EventHandler(this.btClean_Click);
+            // 
             // EntidadesPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -737,13 +752,11 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtWeb;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.RadioButton rbUser;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.RadioButton rbSupervisor;
         private System.Windows.Forms.RadioButton rbAdmin;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -770,5 +783,8 @@ namespace WindowsFormsApp
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btClean;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label20;
     }
 }

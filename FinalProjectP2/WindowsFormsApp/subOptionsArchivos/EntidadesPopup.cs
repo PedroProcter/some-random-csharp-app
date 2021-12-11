@@ -35,8 +35,8 @@ namespace WindowsFormsApp
             txtDescripcion.Clear();
             txtDireccion.Clear();
             txtLocalidad.Clear();
-           // cbIdTipoEntidad.Clear();
-            //cbTipoDocumento.Clear();
+            cbIdTipoEntidad.Text = "Selecciona un tipo";
+            cbTipoDocumento.SelectedIndex= 0;
             txtNumDocumento.Clear();
             txtTelefono.Clear();
             txtWeb.Clear();
@@ -44,8 +44,8 @@ namespace WindowsFormsApp
             txtInstagram.Clear();
             txtTwitter.Clear();
             txtTikTok.Clear();
-            //cbIdGrupoEntidad.Clear();
-            //cbIdTipoEntidad.
+            cbIdGrupoEntidad.Text = "Selecciona un grupo";
+
             txtLimiteCredito.Clear();
             txtUserName.Clear();
             txtPassword.Clear();
@@ -194,6 +194,11 @@ namespace WindowsFormsApp
 
             cbIdTipoEntidad.ValueMember = Datos.Value2;
             cbIdTipoEntidad.DisplayMember = Datos.Value2;
+        }
+
+        private void btClean_Click(object sender, EventArgs e)
+        {
+            clearControls();
         }
     }
 }
