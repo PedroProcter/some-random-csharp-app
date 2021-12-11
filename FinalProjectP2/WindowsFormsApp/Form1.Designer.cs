@@ -57,7 +57,7 @@ namespace WindowsFormsApp
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(634, 1);
+            this.statusStrip1.Location = new System.Drawing.Point(827, 1);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.statusStrip1.Size = new System.Drawing.Size(163, 22);
@@ -91,11 +91,11 @@ namespace WindowsFormsApp
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.statusStrip1, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 427);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 535);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(797, 24);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(990, 24);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // menuPrincipalMDI
@@ -107,7 +107,7 @@ namespace WindowsFormsApp
             this.menuPrincipalMDI.Location = new System.Drawing.Point(0, 0);
             this.menuPrincipalMDI.Name = "menuPrincipalMDI";
             this.menuPrincipalMDI.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuPrincipalMDI.Size = new System.Drawing.Size(800, 24);
+            this.menuPrincipalMDI.Size = new System.Drawing.Size(993, 24);
             this.menuPrincipalMDI.TabIndex = 0;
             this.menuPrincipalMDI.Text = "menuStrip1";
             // 
@@ -177,7 +177,7 @@ namespace WindowsFormsApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(993, 558);
             this.Controls.Add(this.menuPrincipalMDI);
             this.Controls.Add(this.tableLayoutPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
