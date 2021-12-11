@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatos;
+using Negocio;
 
 namespace WindowsFormsApp
 {
     public partial class EntidadesPopup : Form
     {
         private Datos datos = new Datos();
+        private CNegocio negocio = new CNegocio();
         byte editar= 0;
         int id;
 
@@ -48,9 +50,15 @@ namespace WindowsFormsApp
             dateTimePicker1.Value = DateTime.Today;
         }
 
+        public void MostrarTodo()
+        {
+            Datos dt = new Datos();
+            dataGridView1.DataSource = dt.ListarEntidades();
+        }
+
         private void EntidadesPopup_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = datos.ListarEntidades();
+            MostrarTodo();
 
             cbIdGrupoEntidad.DataSource = datos.cargarComboBox();
             cbIdGrupoEntidad.ValueMember = Datos.Value;
@@ -66,12 +74,19 @@ namespace WindowsFormsApp
             if (eliminableCheckBox.Checked) noEliminable = 1;
             if (rbAdmin.Checked) Rol = "Admin";
             if (rbSupervisor.Checked) Rol = "supervisor";
+            int limite = Convert.ToInt32(txtLimiteCredito.Text);
            
             try
             {
                 if (editar == 0)
                 {
-                    datos.InsertarEntidades(txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbIdTipoEntidad.Text, cbTipoDocumento.Text, Convert.ToInt32(txtNumDocumento.Text), txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), TabPages.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
+                    if (Convert.ToInt32(negocio.ValidarLimiteCredito(limite)) > 0)
+                     {
+                        datos.InsertarEntidades(txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbTipoEntidad.Text, cbTipoDocumento.Text, Convert.ToInt32(txtNumDocumento.Text), txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), txtUserName.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
+                    }
+                     else
+                        MessageBox.Show(negocio.ValidarLimiteCredito(limite));
+                    
 
                 }
 
@@ -79,24 +94,33 @@ namespace WindowsFormsApp
                 {
                     try
                     {
-                        datos.UpdateEntidades(id,txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbIdTipoEntidad.Text, cbTipoDocumento.Text, Convert.ToInt32(txtNumDocumento.Text), txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), TabPages.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
-                        editar = 0;
+                        if (Convert.ToInt32(negocio.ValidarLimiteCredito(limite)) > 0)
+                        {
+                            datos.UpdateEntidades(id, txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbTipoEntidad.Text, cbTipoDocumento.Text, Convert.ToInt32(txtNumDocumento.Text), txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), txtUserName.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
+                            editar = 0;
+                        }
+
+                        else
+                            MessageBox.Show(negocio.ValidarLimiteCredito(limite));
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                        
                     }
 
                 }
 
                 clearControls();
-                dataGridView1.DataSource = datos.ListarEntidades();
+                MostrarTodo();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                
             }
+
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
@@ -108,12 +132,12 @@ namespace WindowsFormsApp
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                Datos datos = new Datos();
+                
                 find_textBox.Text = dataGridView1.CurrentRow.Cells["IdEntidad"].Value.ToString();
                 datos.EliminarEntidades(Convert.ToInt32(find_textBox.Text));
                 MessageBox.Show("Eliminado correctamente");
 
-                dataGridView1.DataSource = datos.ListarEntidades();
+                MostrarTodo();
             }
             else
                 MessageBox.Show("seleccione una fila por favor");
@@ -121,17 +145,18 @@ namespace WindowsFormsApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Datos datos = new Datos();
+           
             try
             {
-                dataGridView1.DataSource = datos.BuscarEntidades(Convert.ToInt32(find_textBox.Text));
+                Datos datos1 = new Datos();
+                dataGridView1.DataSource = datos1.BuscarEntidades(Convert.ToInt32(find_textBox.Text));
                 clearControls();
 
                 if (dataGridView1.RowCount <= 1)
                 {
                     MessageBox.Show("no se encontro ningun archivo, revise el nombre y vuelvalo a escribir");
-                    Datos datos1 = new Datos();
-                    dataGridView1.DataSource = datos1.ListarTiposEntidades();
+                    
+                    MostrarTodo();
 
                 }
 
@@ -139,16 +164,32 @@ namespace WindowsFormsApp
             catch (Exception ex)
             {
                 MessageBox.Show("no se pudo continuar la busqueda porque: " + ex);
-                dataGridView1.DataSource = datos.ListarTiposEntidades();
+                MostrarTodo();
             }
         }
 
         private void cbTipoEntidad_Click(object sender, EventArgs e)
         {
+            Datos datos = new Datos();
             datos.cargarComboBox2(Convert.ToInt32(cbIdGrupoEntidad.Text));
 
-            cbIdTipoEntidad.ValueMember = Datos.Value ;
-                cbIdTipoEntidad.DisplayMember = Datos.Value;
+                cbIdTipoEntidad.ValueMember = Datos.Value2 ;
+                cbIdTipoEntidad.DisplayMember = Datos.Value2;
+        }
+
+        private void cbIdTipoEntidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Datos datos = new Datos();
+
+            datos.cargarComboBox2(Convert.ToInt32(cbIdGrupoEntidad.Text));
+
+            //cbIdTipoEntidad.ValueMember = Datos.Value2;
+            cbIdTipoEntidad.DisplayMember = Datos.Value2;
+        }
+
+        private void cbIdGrupoEntidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

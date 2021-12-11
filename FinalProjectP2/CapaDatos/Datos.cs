@@ -12,6 +12,7 @@ namespace CapaDatos
     public class Datos
     {
         public static string Value, Display;
+        public static string Value2, Display2;
         string[] array = new string[18]; 
 
         private static string StringConnectionSQLServer=    "Server = DESKTOP-3B0O51K\\MYSERVER;DataBase=SellPoint;Integrated Security = true"; //ConfigurationManager.ConnectionStrings["StringConnectionSQLServer"].ToString();
@@ -247,6 +248,7 @@ namespace CapaDatos
             comando.CommandType = CommandType.StoredProcedure;
             leer = comando.ExecuteReader();
             tabla.Load(leer);
+            leer.Close();
             CloseBD();
             return tabla;
 
@@ -263,6 +265,8 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@IdTipoEntidad", IdTipoEntidad);
             leer = comando.ExecuteReader();
             tabla.Load(leer);
+            leer.Close();
+            comando.Parameters.Clear();
             CloseBD();
             return tabla;
 
@@ -277,6 +281,8 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@IdGrupoEntidad", IdGrupoEntidad);
             leer = comando.ExecuteReader();
             tabla.Load(leer);
+            comando.Parameters.Clear();
+            leer.Close();
             CloseBD();
             return tabla;
 
@@ -291,6 +297,8 @@ namespace CapaDatos
             comando.Parameters.AddWithValue("@IdEntidad", IdEntidad);
             leer = comando.ExecuteReader();
             tabla.Load(leer);
+            comando.Parameters.Clear();
+            leer.Close();
             CloseBD();
             return tabla;
 
@@ -306,8 +314,10 @@ namespace CapaDatos
             leer = comando.ExecuteReader();
             tabla.Load(leer);
             CloseBD();
-            Value = "IdTipoEntidad";
-            Display =  "Descripcion";
+            leer.Close();
+            comando.Parameters.Clear();
+            Value2 = "IdTipoEntidad";
+            Display2 =  "Descripcion";
             return tabla;
 
         }
@@ -320,6 +330,7 @@ namespace CapaDatos
             leer = comando.ExecuteReader();
             tabla.Load(leer);
             CloseBD();
+            leer.Close();
             Value = "IdGrupoEntidad";
             Display =  "Descripcion";
             return tabla;

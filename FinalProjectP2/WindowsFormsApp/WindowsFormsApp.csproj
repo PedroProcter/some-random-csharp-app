@@ -138,6 +138,14 @@
       <Project>{AF9BB425-A9DF-44DE-8AC8-23A280F3E4B7}</Project>
       <Name>CapaDatos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CapaPresentacion\CapaPresentacion.csproj">
+      <Project>{5c07af7c-b586-405f-b02a-847fe9d8a0f1}</Project>
+      <Name>CapaPresentacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\CapaNegocios.csproj">
+      <Project>{2a59d46e-d3b4-4bfd-a4b1-dab5f0d6c87f}</Project>
+      <Name>CapaNegocios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

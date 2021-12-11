@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class Negocio
+    public class CNegocio
     {
         private static string mensaje;
         public static string Mensaje { get => mensaje; set => mensaje = value; }
@@ -23,12 +23,12 @@ namespace Negocio
         }
 
         /*
-         * if (negocio.ValidarLimiteCredito(Limite) > 0)
+         * if (Negocio.ValidarLimiteCredito(Limite) > 0)
          * {
          *  //guardar
          * }
          * else
-         * MessageBox(negocio.ValidarLimiteCredito(Limite));
+         * MessageBox(Negocio.ValidarLimiteCredito(Limite));
          * 
          */
     }

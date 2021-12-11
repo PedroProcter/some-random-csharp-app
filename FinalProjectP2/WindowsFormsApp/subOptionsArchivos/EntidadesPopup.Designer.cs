@@ -35,6 +35,15 @@ namespace WindowsFormsApp
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabPages = new System.Windows.Forms.TabPage();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtLimiteCredito = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbTipoDocumento = new System.Windows.Forms.ComboBox();
+            this.cbTipoEntidad = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.cbIdTipoEntidad = new System.Windows.Forms.ComboBox();
             this.cbIdGrupoEntidad = new System.Windows.Forms.ComboBox();
@@ -59,8 +68,6 @@ namespace WindowsFormsApp
             this.rbSupervisor = new System.Windows.Forms.RadioButton();
             this.rbAdmin = new System.Windows.Forms.RadioButton();
             this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.txtComentario = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -77,16 +84,9 @@ namespace WindowsFormsApp
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cbTipoEntidad = new System.Windows.Forms.ComboBox();
-            this.cbTipoDocumento = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtLimiteCredito = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TabPages.SuspendLayout();
@@ -102,7 +102,7 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.75221F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.24779F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 369F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 192F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 193F));
             this.tableLayoutPanel1.Controls.Add(this.find_textBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
@@ -120,7 +120,7 @@ namespace WindowsFormsApp
             this.find_textBox.Location = new System.Drawing.Point(69, 6);
             this.find_textBox.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.find_textBox.Name = "find_textBox";
-            this.find_textBox.Size = new System.Drawing.Size(113, 20);
+            this.find_textBox.Size = new System.Drawing.Size(112, 20);
             this.find_textBox.TabIndex = 3;
             // 
             // button1
@@ -142,7 +142,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(188, 0);
+            this.label1.Location = new System.Drawing.Point(187, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(363, 31);
             this.label1.TabIndex = 0;
@@ -215,6 +215,88 @@ namespace WindowsFormsApp
             this.TabPages.TabIndex = 0;
             this.TabPages.Text = "Modificador";
             // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(572, 199);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(128, 20);
+            this.txtUserName.TabIndex = 90;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(569, 183);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(60, 13);
+            this.label3.TabIndex = 89;
+            this.label3.Text = "User Name";
+            // 
+            // txtLimiteCredito
+            // 
+            this.txtLimiteCredito.Location = new System.Drawing.Point(572, 142);
+            this.txtLimiteCredito.Name = "txtLimiteCredito";
+            this.txtLimiteCredito.Size = new System.Drawing.Size(128, 20);
+            this.txtLimiteCredito.TabIndex = 88;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(569, 126);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.TabIndex = 87;
+            this.label2.Text = "Limite Credito";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(433, 71);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(128, 20);
+            this.dateTimePicker1.TabIndex = 86;
+            // 
+            // cbTipoDocumento
+            // 
+            this.cbTipoDocumento.FormattingEnabled = true;
+            this.cbTipoDocumento.Items.AddRange(new object[] {
+            "RNC",
+            "Cedula",
+            "Pasaporte"});
+            this.cbTipoDocumento.Location = new System.Drawing.Point(18, 173);
+            this.cbTipoDocumento.Name = "cbTipoDocumento";
+            this.cbTipoDocumento.Size = new System.Drawing.Size(128, 21);
+            this.cbTipoDocumento.TabIndex = 85;
+            // 
+            // cbTipoEntidad
+            // 
+            this.cbTipoEntidad.FormattingEnabled = true;
+            this.cbTipoEntidad.Items.AddRange(new object[] {
+            "Fisica",
+            "Juridica"});
+            this.cbTipoEntidad.Location = new System.Drawing.Point(433, 120);
+            this.cbTipoEntidad.Name = "cbTipoEntidad";
+            this.cbTipoEntidad.Size = new System.Drawing.Size(128, 21);
+            this.cbTipoEntidad.TabIndex = 84;
+            this.cbTipoEntidad.Click += new System.EventHandler(this.cbTipoEntidad_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(15, 157);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(101, 13);
+            this.label22.TabIndex = 23;
+            this.label22.Text = "Tipo de Documento";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(430, 105);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(82, 13);
+            this.label21.TabIndex = 23;
+            this.label21.Text = "Tipo de Entidad";
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(653, 390);
@@ -232,6 +314,7 @@ namespace WindowsFormsApp
             this.cbIdTipoEntidad.Name = "cbIdTipoEntidad";
             this.cbIdTipoEntidad.Size = new System.Drawing.Size(128, 21);
             this.cbIdTipoEntidad.TabIndex = 81;
+            this.cbIdTipoEntidad.SelectedIndexChanged += new System.EventHandler(this.cbIdTipoEntidad_SelectedIndexChanged);
             // 
             // cbIdGrupoEntidad
             // 
@@ -240,6 +323,7 @@ namespace WindowsFormsApp
             this.cbIdGrupoEntidad.Name = "cbIdGrupoEntidad";
             this.cbIdGrupoEntidad.Size = new System.Drawing.Size(128, 21);
             this.cbIdGrupoEntidad.TabIndex = 80;
+            this.cbIdGrupoEntidad.SelectedIndexChanged += new System.EventHandler(this.cbIdGrupoEntidad_SelectedIndexChanged);
             // 
             // panel6
             // 
@@ -429,24 +513,6 @@ namespace WindowsFormsApp
             this.label20.TabIndex = 64;
             this.label20.Text = "Password Entidad";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(430, 105);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(82, 13);
-            this.label21.TabIndex = 23;
-            this.label21.Text = "Tipo de Entidad";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(15, 157);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(101, 13);
-            this.label22.TabIndex = 23;
-            this.label22.Text = "Tipo de Documento";
-            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -587,6 +653,15 @@ namespace WindowsFormsApp
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visualizador";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(578, 390);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 84;
+            this.button2.Text = "Modify";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(659, 390);
@@ -607,79 +682,6 @@ namespace WindowsFormsApp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(734, 378);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // cbTipoEntidad
-            // 
-            this.cbTipoEntidad.FormattingEnabled = true;
-            this.cbTipoEntidad.Items.AddRange(new object[] {
-            "Fisica",
-            "Juridica"});
-            this.cbTipoEntidad.Location = new System.Drawing.Point(433, 120);
-            this.cbTipoEntidad.Name = "cbTipoEntidad";
-            this.cbTipoEntidad.Size = new System.Drawing.Size(128, 21);
-            this.cbTipoEntidad.TabIndex = 84;
-            this.cbTipoEntidad.Click += new System.EventHandler(this.cbTipoEntidad_Click);
-            // 
-            // cbTipoDocumento
-            // 
-            this.cbTipoDocumento.FormattingEnabled = true;
-            this.cbTipoDocumento.Items.AddRange(new object[] {
-            "RNC",
-            "Cedula",
-            "Pasaporte"});
-            this.cbTipoDocumento.Location = new System.Drawing.Point(18, 173);
-            this.cbTipoDocumento.Name = "cbTipoDocumento";
-            this.cbTipoDocumento.Size = new System.Drawing.Size(128, 21);
-            this.cbTipoDocumento.TabIndex = 85;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(433, 71);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(128, 20);
-            this.dateTimePicker1.TabIndex = 86;
-            // 
-            // txtLimiteCredito
-            // 
-            this.txtLimiteCredito.Location = new System.Drawing.Point(572, 142);
-            this.txtLimiteCredito.Name = "txtLimiteCredito";
-            this.txtLimiteCredito.Size = new System.Drawing.Size(128, 20);
-            this.txtLimiteCredito.TabIndex = 88;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(569, 126);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
-            this.label2.TabIndex = 87;
-            this.label2.Text = "Limite Credito";
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(572, 199);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(128, 20);
-            this.txtUserName.TabIndex = 90;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(569, 183);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 89;
-            this.label3.Text = "User Name";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(578, 390);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 84;
-            this.button2.Text = "Modify";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // EntidadesPopup
             // 

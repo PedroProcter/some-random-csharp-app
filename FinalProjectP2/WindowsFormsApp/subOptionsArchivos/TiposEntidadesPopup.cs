@@ -13,9 +13,9 @@ namespace WindowsFormsApp
 {
     public partial class TiposEntidadesPopup : Form
     {
-        //private Datos datos = new Datos();
+        private Datos datos = new Datos();
         private int id;
-            byte editar = 1;
+            byte editar = 0;
         public TiposEntidadesPopup()
         {
             InitializeComponent();
@@ -31,6 +31,12 @@ namespace WindowsFormsApp
             statusCheckBox.Checked = false;
             eliminableCheckBox.Checked = false;
             dateTimePicker1.Value = DateTime.Today;
+        }
+
+        public void MostrarTodo()
+        {
+            Datos dt = new Datos();
+            dataGridView1.DataSource = dt.ListarTiposEntidades();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -63,7 +69,7 @@ namespace WindowsFormsApp
                 }
 
                 clearControls();
-                dataGridView1.DataSource = datos.ListarTiposEntidades();
+                MostrarTodo();
 
             }
             catch (Exception ex)
@@ -74,8 +80,7 @@ namespace WindowsFormsApp
 
         private void TiposEntidadesPopup_Load(object sender, EventArgs e)
         {
-            Datos datos = new Datos();
-            dataGridView1.DataSource = datos.ListarTiposEntidades();
+            MostrarTodo();
 
             
             comboBox1.DataSource = datos.cargarComboBox();
@@ -96,8 +101,8 @@ namespace WindowsFormsApp
                 textBox1.Text = dataGridView1.CurrentRow.Cells["IdTipoEntidad"].Value.ToString();
                 datos.EliminarTiposEntidades(Convert.ToInt32(textBox1.Text));
                 MessageBox.Show("Eliminado correctamente");
-                
-                dataGridView1.DataSource = datos.ListarTiposEntidades();
+
+                MostrarTodo();
             }
             else
                 MessageBox.Show("seleccione una fila por favor");
@@ -107,25 +112,24 @@ namespace WindowsFormsApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Datos datos = new Datos();
             try
-            {   
-                dataGridView1.DataSource = datos.BuscarTiposEntidades(Convert.ToInt32(textBox1.Text));
+            {
+                Datos datos1 = new Datos();
+                dataGridView1.DataSource = datos1.BuscarTiposEntidades(Convert.ToInt32(textBox1.Text));
                 clearControls();
 
                 if (dataGridView1.RowCount <= 1)
                 {
                     MessageBox.Show("no se encontro ningun archivo, revise el nombre y vuelvalo a escribir");
-                    Datos datos1 = new Datos();
-                    dataGridView1.DataSource = datos1.ListarTiposEntidades();
+                    MostrarTodo();
 
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("no se pudo insertar los datos por: " + ex);
-                dataGridView1.DataSource = datos.ListarTiposEntidades();
+                MessageBox.Show("no se pudo realizar la busqueda por: " + ex);
+                MostrarTodo();
             }
         }
 

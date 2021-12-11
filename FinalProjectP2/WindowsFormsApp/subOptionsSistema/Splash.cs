@@ -32,7 +32,7 @@ namespace WindowsFormsApp.subOptionsSistema
                 this.Opacity -= 0.0001; 
             }
             this.Hide();
-            Login Principal = new Login();
+            Form1 Principal = new Form1();
             Principal.Show();
             timer1.Stop();
         }
