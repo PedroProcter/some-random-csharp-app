@@ -21,6 +21,7 @@ namespace WindowsFormsApp
         private void gruposEntidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GruposEntidadesPopup grupoEntidades = new GruposEntidadesPopup();
+            grupoEntidades.MdiParent = this;
             grupoEntidades.Visible = true;
             grupoEntidades.Activate();
         }
@@ -28,6 +29,7 @@ namespace WindowsFormsApp
         private void tiposEntidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TiposEntidadesPopup tiposEntidades = new TiposEntidadesPopup();
+            tiposEntidades.MdiParent = this;
             tiposEntidades.Visible = true;
             tiposEntidades.Activate();
         }
@@ -35,6 +37,7 @@ namespace WindowsFormsApp
         private void entidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EntidadesPopup entidades = new EntidadesPopup();
+            entidades.MdiParent = this;
             entidades.Visible = true;
             entidades.Activate();
         }
