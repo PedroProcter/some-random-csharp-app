@@ -52,3 +52,7 @@ C:\Users\xander\Source\Repos\FinalProjectP2V2\FinalProjectP2\WindowsFormsApp\obj
 C:\Users\xander\Source\Repos\FinalProjectP2V2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CopyComplete
 C:\Users\xander\Source\Repos\FinalProjectP2V2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.exe
 C:\Users\xander\Source\Repos\FinalProjectP2V2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.pdb
+C:\Users\xander\Source\Repos\FinalProjectP2V2\FinalProjectP2\WindowsFormsApp\bin\Debug\CapaPresentacion.dll
+C:\Users\xander\Source\Repos\FinalProjectP2V2\FinalProjectP2\WindowsFormsApp\bin\Debug\Negocio.dll
+C:\Users\xander\Source\Repos\FinalProjectP2V2\FinalProjectP2\WindowsFormsApp\bin\Debug\CapaPresentacion.pdb
+C:\Users\xander\Source\Repos\FinalProjectP2V2\FinalProjectP2\WindowsFormsApp\bin\Debug\Negocio.pdb

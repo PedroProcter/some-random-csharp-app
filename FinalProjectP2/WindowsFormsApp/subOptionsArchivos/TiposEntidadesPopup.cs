@@ -39,7 +39,7 @@ namespace WindowsFormsApp
             dataGridView1.DataSource = dt.ListarTiposEntidades();
         }
 
-        private void clearControls()
+        private void clearCosntrols()
         {
             txtComentario.Clear();
             txtDescripcion.Clear();
