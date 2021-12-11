@@ -17,7 +17,7 @@ namespace WindowsFormsApp
         private Datos datos = new Datos();
         private CNegocio negocio = new CNegocio();
         byte editar= 0;
-        int id;
+        int id=0;
 
 
         public EntidadesPopup()
