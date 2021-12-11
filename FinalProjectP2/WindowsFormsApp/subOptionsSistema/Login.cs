@@ -30,22 +30,26 @@ namespace WindowsFormsApp
             Form1 formulario = new Form1();
             if (txtUser.Text == "Bryan" && txtPass.Text == "Admin")
             {
-                this.Close();
                 User = "Bryan";
-                formulario.Show();
-            }else if (txtUser.Text == "Johanny" && txtPass.Text == "Admin")
-            {
-                
                 this.Close();
-                User = "Johanny";
                 formulario.Show();
+                
+            }
+            else if (txtUser.Text == "Johanny" && txtPass.Text == "Admin")
+            {
+                User = "Johanny";
+                this.Close();
+                formulario.Show();
+                
             }
             else if (txtUser.Text == "Pedro" && txtPass.Text == "Admin")
             {
-                this.Close();
                 User = "Pedro";
+                this.Close();
                 formulario.Show();
-            }else
+                
+            }
+            else
             {
                 MessageBox.Show("Ha ingresado una contraseña incorrecta");
             }
@@ -86,6 +90,11 @@ namespace WindowsFormsApp
                 txtPass.Text = "CONTRASEÑA";
                 txtPass.UseSystemPasswordChar = false;
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -188,7 +188,7 @@ namespace WindowsFormsApp
             this.MainMenuStrip = this.menuPrincipalMDI;
             this.Name = "Form1";
             this.Text = "Menu Principal";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

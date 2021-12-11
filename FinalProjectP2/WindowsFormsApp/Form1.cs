@@ -51,6 +51,8 @@ namespace WindowsFormsApp
         {
             Login login = new Login();
             login.ShowDialog();
+            this.Close();
+
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,11 +68,7 @@ namespace WindowsFormsApp
             this.Close();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            GC.Collect();
-            Environment.Exit(0);
-        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -78,5 +76,5 @@ namespace WindowsFormsApp
         }
 
        
-            }
+    }
 }
