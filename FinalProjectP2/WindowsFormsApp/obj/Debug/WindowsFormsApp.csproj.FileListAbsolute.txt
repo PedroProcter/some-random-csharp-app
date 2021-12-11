@@ -33,6 +33,7 @@ C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\De
 C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\CapaDatos.dll
 C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\CapaDatos.pdb
 C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CopyComplete
-C:\Users\The Gentleman\source\repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\CapaDatos.dll
-C:\Users\The Gentleman\source\repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\CapaDatos.pdb
-C:\Users\The Gentleman\source\repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CopyComplete
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\CapaPresentacion.dll
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\Negocio.dll
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\CapaPresentacion.pdb
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\Negocio.pdb
