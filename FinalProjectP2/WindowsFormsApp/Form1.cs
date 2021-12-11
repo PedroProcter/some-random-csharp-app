@@ -46,8 +46,11 @@ namespace WindowsFormsApp
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             Login login = new Login();
             login.ShowDialog();
+
+           
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,6 +66,11 @@ namespace WindowsFormsApp
             
             MessageBox.Show("Ha salido del sistema");
             this.Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

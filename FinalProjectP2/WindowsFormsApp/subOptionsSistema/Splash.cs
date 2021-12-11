@@ -27,7 +27,7 @@ namespace WindowsFormsApp.subOptionsSistema
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            while(this.Opacity> 0)
+            while(this.Opacity> 0)  
             {
                 this.Opacity -= 0.0001; 
             }
