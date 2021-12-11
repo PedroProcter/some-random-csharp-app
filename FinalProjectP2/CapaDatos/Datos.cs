@@ -11,6 +11,10 @@ namespace CapaDatos
 {
     public class Datos
     {
+        public static string Value, Display;
+        string[] array; 
+        array = new string[18];
+
         private static string StringConnectionSQLServer= ConfigurationManager.ConnectionStrings["WindowsFormsApp.Properties.Settings.StringConnectionSQLServer"].ToString();  // = "Server = DESKTOP-3B0O51K\\MYSERVER;DataBase=MiPrimeraVez;Integrated Security = true";
         SqlDataReader leer;
         DataTable tabla = new DataTable();
@@ -291,6 +295,49 @@ namespace CapaDatos
             CloseBD();
             return tabla;
 
+        }
+
+        public DataTable cargarComboBox2(int IdGrupoEntidad)
+        {
+
+            comando.Connection = OpenBD();
+            comando.CommandText = "cargarTiposEntidades";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@IdGrupoEntidad", IdGrupoEntidad);
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            CloseBD();
+            Value = "IdTipoEntidad";
+            Display =  "Descripcion";
+            return tabla;
+
+        }
+
+        public DataTable cargarComboBox()
+        {
+            comando.Connection = OpenBD();
+            comando.CommandText = "cargarGruposEntidades";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+            tabla.Load(leer);
+            CloseBD();
+            Value = "IdGrupoEntidad";
+            Display =  "Descripcion";
+            return tabla;
+        }
+
+        public void RellenarTextBox()
+        {
+            comando.Connection = OpenBD();
+            comando.CommandText = "cargarGruposEntidades";
+            comando.CommandType = CommandType.StoredProcedure;
+            leer = comando.ExecuteReader();
+
+            if(leer.Read())
+            {
+                //aqui va el array que almacenara todos los datos de los textbox 
+                //array[0]= leer["NOMBRE DE LA  COLUMNA"].ToString();
+            }
         }
 
         /*
