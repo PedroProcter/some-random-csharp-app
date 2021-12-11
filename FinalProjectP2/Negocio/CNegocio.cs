@@ -21,15 +21,5 @@ namespace Negocio
             else
                 return Limite.ToString();
         }
-
-        /*
-         * if (Negocio.ValidarLimiteCredito(Limite) > 0)
-         * {
-         *  //guardar
-         * }
-         * else
-         * MessageBox(Negocio.ValidarLimiteCredito(Limite));
-         * 
-         */
     }
 }

@@ -35,6 +35,9 @@ namespace WindowsFormsApp
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabPages = new System.Windows.Forms.TabPage();
+            this.btClean = new System.Windows.Forms.Button();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.txtUserName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtLimiteCredito = new System.Windows.Forms.TextBox();
@@ -85,9 +88,6 @@ namespace WindowsFormsApp
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.btClean = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.TabPages.SuspendLayout();
@@ -103,7 +103,7 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.75221F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.24779F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 369F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
             this.tableLayoutPanel1.Controls.Add(this.find_textBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
@@ -118,10 +118,10 @@ namespace WindowsFormsApp
             // 
             this.find_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.find_textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.find_textBox.Location = new System.Drawing.Point(68, 6);
+            this.find_textBox.Location = new System.Drawing.Point(65, 6);
             this.find_textBox.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.find_textBox.Name = "find_textBox";
-            this.find_textBox.Size = new System.Drawing.Size(112, 20);
+            this.find_textBox.Size = new System.Drawing.Size(107, 20);
             this.find_textBox.TabIndex = 3;
             // 
             // button1
@@ -129,12 +129,18 @@ namespace WindowsFormsApp
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Image = global::WindowsFormsApp.Properties.Resources.buscar;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 25);
+            this.button1.Size = new System.Drawing.Size(56, 25);
             this.button1.TabIndex = 2;
             this.button1.Text = "Find";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
@@ -143,7 +149,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(186, 0);
+            this.label1.Location = new System.Drawing.Point(178, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(363, 31);
             this.label1.TabIndex = 0;
@@ -216,6 +222,37 @@ namespace WindowsFormsApp
             this.TabPages.Size = new System.Drawing.Size(743, 419);
             this.TabPages.TabIndex = 0;
             this.TabPages.Text = "Modificador";
+            // 
+            // btClean
+            // 
+            this.btClean.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
+            this.btClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btClean.Image = global::WindowsFormsApp.Properties.Resources.eliminar;
+            this.btClean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btClean.Location = new System.Drawing.Point(565, 390);
+            this.btClean.Name = "btClean";
+            this.btClean.Size = new System.Drawing.Size(75, 23);
+            this.btClean.TabIndex = 93;
+            this.btClean.Text = "Clean";
+            this.btClean.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btClean.UseVisualStyleBackColor = false;
+            this.btClean.Click += new System.EventHandler(this.btClean_Click);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(433, 176);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(128, 20);
+            this.txtPassword.TabIndex = 92;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(430, 160);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(92, 13);
+            this.label20.TabIndex = 91;
+            this.label20.Text = "Password Entidad";
             // 
             // txtUserName
             // 
@@ -303,12 +340,17 @@ namespace WindowsFormsApp
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = global::WindowsFormsApp.Properties.Resources.guardar_el_archivo;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(653, 390);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 82;
             this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // cbIdTipoEntidad
@@ -348,7 +390,6 @@ namespace WindowsFormsApp
             this.eliminableCheckBox.TabIndex = 29;
             this.eliminableCheckBox.Text = "NoEliminable";
             this.eliminableCheckBox.UseVisualStyleBackColor = true;
-            this.eliminableCheckBox.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // statusCheckBox
             // 
@@ -645,22 +686,32 @@ namespace WindowsFormsApp
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::WindowsFormsApp.Properties.Resources.editar_texto;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(578, 390);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 84;
             this.button2.Text = "Modify";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Image = global::WindowsFormsApp.Properties.Resources.eliminar;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(659, 390);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 31;
             this.button5.Text = "Delete";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // dataGridView1
@@ -673,32 +724,6 @@ namespace WindowsFormsApp
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(734, 378);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(433, 176);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(128, 20);
-            this.txtPassword.TabIndex = 92;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(430, 160);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(92, 13);
-            this.label20.TabIndex = 91;
-            this.label20.Text = "Password Entidad";
-            // 
-            // btClean
-            // 
-            this.btClean.Location = new System.Drawing.Point(565, 390);
-            this.btClean.Name = "btClean";
-            this.btClean.Size = new System.Drawing.Size(75, 23);
-            this.btClean.TabIndex = 93;
-            this.btClean.Text = "Clean";
-            this.btClean.UseVisualStyleBackColor = true;
-            this.btClean.Click += new System.EventHandler(this.btClean_Click);
             // 
             // EntidadesPopup
             // 

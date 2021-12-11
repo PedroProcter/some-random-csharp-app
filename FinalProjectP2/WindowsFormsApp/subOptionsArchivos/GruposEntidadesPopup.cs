@@ -59,7 +59,6 @@ namespace WindowsFormsApp
 
         private void GruposEntidadesPopup_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'sellPointDataSet.GruposEntidades' Puede moverla o quitarla según sea necesario.
             this.gruposEntidadesTableAdapter.Fill(this.sellPointDataSet.GruposEntidades);
         }
 

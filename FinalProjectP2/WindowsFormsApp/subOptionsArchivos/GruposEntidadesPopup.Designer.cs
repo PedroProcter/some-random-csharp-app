@@ -30,6 +30,7 @@ namespace WindowsFormsApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GruposEntidadesPopup));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.clearControlsButton = new System.Windows.Forms.Button();
@@ -106,12 +107,17 @@ namespace WindowsFormsApp
             // 
             // clearControlsButton
             // 
+            this.clearControlsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
+            this.clearControlsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearControlsButton.Image = global::WindowsFormsApp.Properties.Resources.eliminar;
+            this.clearControlsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.clearControlsButton.Location = new System.Drawing.Point(479, 353);
             this.clearControlsButton.Name = "clearControlsButton";
             this.clearControlsButton.Size = new System.Drawing.Size(75, 23);
             this.clearControlsButton.TabIndex = 30;
             this.clearControlsButton.Text = "Clear";
-            this.clearControlsButton.UseVisualStyleBackColor = true;
+            this.clearControlsButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.clearControlsButton.UseVisualStyleBackColor = false;
             this.clearControlsButton.Click += new System.EventHandler(this.clearControlsButton_Click);
             // 
             // fechaRegistroDatePicker
@@ -125,22 +131,31 @@ namespace WindowsFormsApp
             // 
             // modifyGrupoEntidadButton
             // 
+            this.modifyGrupoEntidadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
+            this.modifyGrupoEntidadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modifyGrupoEntidadButton.Image = global::WindowsFormsApp.Properties.Resources.editar_texto;
+            this.modifyGrupoEntidadButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.modifyGrupoEntidadButton.Location = new System.Drawing.Point(561, 353);
             this.modifyGrupoEntidadButton.Name = "modifyGrupoEntidadButton";
             this.modifyGrupoEntidadButton.Size = new System.Drawing.Size(75, 23);
             this.modifyGrupoEntidadButton.TabIndex = 28;
             this.modifyGrupoEntidadButton.Text = "Modify";
-            this.modifyGrupoEntidadButton.UseVisualStyleBackColor = true;
+            this.modifyGrupoEntidadButton.UseVisualStyleBackColor = false;
             this.modifyGrupoEntidadButton.Click += new System.EventHandler(this.modifyGrupoEntidadButton_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::WindowsFormsApp.Properties.Resources.guardar_el_archivo;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(642, 353);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 27;
             this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel5
@@ -232,12 +247,17 @@ namespace WindowsFormsApp
             // deleteGrupoEntidadButton
             // 
             this.deleteGrupoEntidadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteGrupoEntidadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
+            this.deleteGrupoEntidadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteGrupoEntidadButton.Image = global::WindowsFormsApp.Properties.Resources.eliminar;
+            this.deleteGrupoEntidadButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.deleteGrupoEntidadButton.Location = new System.Drawing.Point(661, 377);
             this.deleteGrupoEntidadButton.Name = "deleteGrupoEntidadButton";
             this.deleteGrupoEntidadButton.Size = new System.Drawing.Size(75, 23);
             this.deleteGrupoEntidadButton.TabIndex = 30;
             this.deleteGrupoEntidadButton.Text = "Delete";
-            this.deleteGrupoEntidadButton.UseVisualStyleBackColor = true;
+            this.deleteGrupoEntidadButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.deleteGrupoEntidadButton.UseVisualStyleBackColor = false;
             this.deleteGrupoEntidadButton.Click += new System.EventHandler(this.deleteGrupoEntidadButton_Click);
             // 
             // dataGridView1
@@ -323,7 +343,7 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.42105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.57895F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 418F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 166F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.findGrupoEntidadButton, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.idGrupoEntidadTextBox, 1, 0);
@@ -340,7 +360,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(172, 0);
+            this.label1.Location = new System.Drawing.Point(168, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(412, 30);
             this.label1.TabIndex = 2;
@@ -352,12 +372,16 @@ namespace WindowsFormsApp
             this.findGrupoEntidadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.findGrupoEntidadButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(222)))), ((int)(((byte)(89)))));
+            this.findGrupoEntidadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.findGrupoEntidadButton.Image = global::WindowsFormsApp.Properties.Resources.buscar;
+            this.findGrupoEntidadButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.findGrupoEntidadButton.Location = new System.Drawing.Point(3, 3);
             this.findGrupoEntidadButton.Name = "findGrupoEntidadButton";
-            this.findGrupoEntidadButton.Size = new System.Drawing.Size(42, 24);
+            this.findGrupoEntidadButton.Size = new System.Drawing.Size(41, 24);
             this.findGrupoEntidadButton.TabIndex = 0;
-            this.findGrupoEntidadButton.Text = "Find";
-            this.findGrupoEntidadButton.UseVisualStyleBackColor = true;
+            this.findGrupoEntidadButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.findGrupoEntidadButton.UseVisualStyleBackColor = false;
             this.findGrupoEntidadButton.Click += new System.EventHandler(this.findGrupoEntidadButton_Click);
             // 
             // idGrupoEntidadTextBox
@@ -366,9 +390,9 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.idGrupoEntidadTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idGrupoEntidadTextBox.Location = new System.Drawing.Point(51, 3);
+            this.idGrupoEntidadTextBox.Location = new System.Drawing.Point(50, 3);
             this.idGrupoEntidadTextBox.Name = "idGrupoEntidadTextBox";
-            this.idGrupoEntidadTextBox.Size = new System.Drawing.Size(115, 20);
+            this.idGrupoEntidadTextBox.Size = new System.Drawing.Size(112, 20);
             this.idGrupoEntidadTextBox.TabIndex = 1;
             // 
             // gruposEntidadesTableAdapter
@@ -384,6 +408,7 @@ namespace WindowsFormsApp
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GruposEntidadesPopup";
             this.Text = "GruposEntidades";
             this.Load += new System.EventHandler(this.GruposEntidadesPopup_Load);

@@ -19,7 +19,6 @@ namespace WindowsFormsApp
         public TiposEntidadesPopup()
         {
             InitializeComponent();
-
         }
 
         private void clearControls()
@@ -27,7 +26,6 @@ namespace WindowsFormsApp
             txtComentario.Clear();
             txtDescripcion.Clear();
             textBox1.Clear();
-            
             statusCheckBox.Checked = false;
             eliminableCheckBox.Checked = false;
             dateTimePicker1.Value = DateTime.Today;
@@ -37,17 +35,6 @@ namespace WindowsFormsApp
         {
             Datos dt = new Datos();
             dataGridView1.DataSource = dt.ListarTiposEntidades();
-        }
-
-        private void clearCosntrols()
-        {
-            txtComentario.Clear();
-            txtDescripcion.Clear();
-            textBox1.Clear();
-            
-            statusCheckBox.Checked = false;
-            eliminableCheckBox.Checked = false;
-            dateTimePicker1.Value = DateTime.Today;
         }
 
         private void button4_Click(object sender, EventArgs e)

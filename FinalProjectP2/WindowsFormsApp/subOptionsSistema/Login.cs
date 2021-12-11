@@ -17,10 +17,8 @@ namespace WindowsFormsApp
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
+        private static string user;
+        public static string User { get => user; set => user = value; }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -33,14 +31,17 @@ namespace WindowsFormsApp
             if (txtUser.Text == "Bryan" || txtPass.Text == "Admin")
             {
                 this.Close();
+                User = "Bryan";
                 formulario.Show();
             }else if (txtUser.Text == "Johanny" || txtPass.Text == "Admin")
             {
+                User = "Johanny";
                 this.Close();
                 formulario.Show();
             }
             else if (txtUser.Text == "Pedro" || txtPass.Text == "Admin")
             {
+                User = "Pedro";
                 this.Close();
                 formulario.Show();
             }else
@@ -74,7 +75,6 @@ namespace WindowsFormsApp
                 txtPass.Text = "";
                 txtPass.UseSystemPasswordChar = true;
             }
-
 
         }
 

@@ -44,7 +44,6 @@ namespace WindowsFormsApp
             txtTwitter.Clear();
             txtTikTok.Clear();
             cbIdGrupoEntidad.Text = "Selecciona un grupo";
-
             txtLimiteCredito.Clear();
             txtUserName.Clear();
             txtPassword.Clear();
@@ -71,17 +70,12 @@ namespace WindowsFormsApp
         {
             string status = "Inactiva";
             int noEliminable = 0;
-            string Rol = "User"; //crearle sentencias if segun cada opcion
-            
+            string Rol = "User"; 
             if (statusCheckBox.Checked) status = "Activa";
             if (eliminableCheckBox.Checked) noEliminable = 1;
             if (rbAdmin.Checked) Rol = "Admin";
             if (rbSupervisor.Checked) Rol = "supervisor";
             int limite = Convert.ToInt32(txtLimiteCredito.Text);
-
-            
-            
-
 
             try
             {
@@ -127,11 +121,6 @@ namespace WindowsFormsApp
                 MessageBox.Show("no se pudo insertar los datos por: " + ex);
                 
             }
-
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
 
         }
 

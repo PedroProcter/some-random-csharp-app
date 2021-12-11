@@ -71,5 +71,12 @@ namespace WindowsFormsApp
             GC.Collect();
             Environment.Exit(0);
         }
-    }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            toolStripStatusLabel2.Text = Login.User;
+        }
+
+       
+            }
 }

@@ -118,6 +118,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="subOptionsArchivos\TiposEntidadesPopup.resx">
       <DependentUpon>TiposEntidadesPopup.cs</DependentUpon>
@@ -162,6 +163,21 @@
       <Project>{2a59d46e-d3b4-4bfd-a4b1-dab5f0d6c87f}</Project>
       <Name>CapaNegocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar-el-archivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar-texto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
