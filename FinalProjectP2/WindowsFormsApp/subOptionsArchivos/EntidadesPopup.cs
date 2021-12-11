@@ -30,7 +30,6 @@ namespace WindowsFormsApp
 
         private void clearControls()
         {
-            //limpiar combo box
 
             txtDescripcion.Clear();
             txtDireccion.Clear();
@@ -200,5 +199,44 @@ namespace WindowsFormsApp
         {
             clearControls();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            editar = 1;
+            id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IdTipoEntidad"].Value.ToString());
+            dateTimePicker1.Value = Convert.ToDateTime(dataGridView1.CurrentRow.Cells["FechaRegistro"].Value.ToString());
+            txtComentario.Text = dataGridView1.CurrentRow.Cells["Comentario"].Value.ToString();
+            txtDescripcion.Text = dataGridView1.CurrentRow.Cells["Descripcion"].Value.ToString();
+            cbIdTipoEntidad.Text = dataGridView1.CurrentRow.Cells["IdGrupoEntidad"].Value.ToString();
+            txtDireccion.Text = dataGridView1.CurrentRow.Cells["Direccion"].Value.ToString();
+            txtLocalidad.Text = dataGridView1.CurrentRow.Cells["Localidad"].Value.ToString();
+            cbTipoDocumento.Text = dataGridView1.CurrentRow.Cells["TipoDocumento"].Value.ToString();
+            txtTelefono.Text = dataGridView1.CurrentRow.Cells["Telefonos"].Value.ToString();
+            txtWeb.Text = dataGridView1.CurrentRow.Cells["URLPaginaWeb"].Value.ToString();
+            txtFacebook.Text = dataGridView1.CurrentRow.Cells["URLFacebook"].Value.ToString();
+            txtInstagram.Text = dataGridView1.CurrentRow.Cells["URLInstagram"].Value.ToString();
+            txtTwitter.Text = dataGridView1.CurrentRow.Cells["URLTwitter"].Value.ToString();
+            txtTikTok.Text = dataGridView1.CurrentRow.Cells["URLTikTok"].Value.ToString();
+            txtUserName.Text = dataGridView1.CurrentRow.Cells["UserNameEntidad"].Value.ToString();
+            txtPassword.Text = dataGridView1.CurrentRow.Cells["PassworEntidad"].Value.ToString();
+            
+            txtNumDocumento.Text = dataGridView1.CurrentRow.Cells["NumeroDocumento"].Value.ToString();
+           
+            txtLimiteCredito.Text = dataGridView1.CurrentRow.Cells["LimiteCredito"].Value.ToString();
+            cbIdGrupoEntidad.Text = dataGridView1.CurrentRow.Cells["IdGrupoEntidad"].Value.ToString();
+            if (dataGridView1.CurrentRow.Cells["Estatus"].Value.ToString() == "Activa")
+                statusCheckBox.Checked = true;
+
+            else
+                statusCheckBox.Checked = false;
+
+            if (dataGridView1.CurrentRow.Cells["NoEliminable"].Value.ToString() == "1")
+                eliminableCheckBox.Checked = true;
+
+            else
+                eliminableCheckBox.Checked = false;
+        }
+
+    
     }
 }

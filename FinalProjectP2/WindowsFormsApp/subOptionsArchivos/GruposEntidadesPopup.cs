@@ -69,8 +69,9 @@ namespace WindowsFormsApp
             try {
                 datos.EliminarGruposEntidades(int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
                 updateDataGridView();
-            } catch {
-                
+            } catch (Exception ex){
+
+                MessageBox.Show("ERROR: Row not deleted" + ex);
             }
 
             if (dataGridView1.Rows.Count != old_count)
