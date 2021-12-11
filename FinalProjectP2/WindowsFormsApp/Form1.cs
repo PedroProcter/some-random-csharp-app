@@ -63,7 +63,6 @@ namespace WindowsFormsApp
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             MessageBox.Show("Ha salido del sistema");
             this.Close();
         }
@@ -73,8 +72,6 @@ namespace WindowsFormsApp
         private void Form1_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel2.Text = Login.User;
-        }
-
-       
+        } 
     }
 }

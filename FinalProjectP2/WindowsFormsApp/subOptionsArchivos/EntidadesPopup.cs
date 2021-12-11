@@ -61,6 +61,7 @@ namespace WindowsFormsApp
         {
             MostrarTodo();
 
+
             cbIdGrupoEntidad.DataSource = datos.cargarComboBox();
             cbIdGrupoEntidad.ValueMember = Datos.Value;
             cbIdGrupoEntidad.DisplayMember = Datos.Value;

@@ -343,7 +343,7 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.42105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.57895F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 418F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.findGrupoEntidadButton, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.idGrupoEntidadTextBox, 1, 0);
@@ -360,7 +360,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(168, 0);
+            this.label1.Location = new System.Drawing.Point(167, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(412, 30);
             this.label1.TabIndex = 2;
@@ -378,7 +378,7 @@ namespace WindowsFormsApp
             this.findGrupoEntidadButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.findGrupoEntidadButton.Location = new System.Drawing.Point(3, 3);
             this.findGrupoEntidadButton.Name = "findGrupoEntidadButton";
-            this.findGrupoEntidadButton.Size = new System.Drawing.Size(41, 24);
+            this.findGrupoEntidadButton.Size = new System.Drawing.Size(40, 24);
             this.findGrupoEntidadButton.TabIndex = 0;
             this.findGrupoEntidadButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.findGrupoEntidadButton.UseVisualStyleBackColor = false;
@@ -390,7 +390,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.idGrupoEntidadTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idGrupoEntidadTextBox.Location = new System.Drawing.Point(50, 3);
+            this.idGrupoEntidadTextBox.Location = new System.Drawing.Point(49, 3);
             this.idGrupoEntidadTextBox.Name = "idGrupoEntidadTextBox";
             this.idGrupoEntidadTextBox.Size = new System.Drawing.Size(112, 20);
             this.idGrupoEntidadTextBox.TabIndex = 1;
