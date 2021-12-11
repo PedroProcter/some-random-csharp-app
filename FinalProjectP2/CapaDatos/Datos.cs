@@ -13,7 +13,6 @@ namespace CapaDatos
     {
         public static string Value, Display;
         public static string Value2, Display2;
-        string[] array = new string[18]; 
 
         private static string StringConnectionSQLServer=    "Server = DESKTOP-3B0O51K\\MYSERVER;DataBase=SellPoint;Integrated Security = true"; //ConfigurationManager.ConnectionStrings["StringConnectionSQLServer"].ToString();
         SqlDataReader leer;
