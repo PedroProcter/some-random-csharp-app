@@ -34,25 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Configuration.ConfigurationManager.6.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.OracleClient" />
-    <Reference Include="System.Net" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceProcess" />
-    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,22 +44,67 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="subOptionsArchivos\EntidadesPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subOptionsArchivos\EntidadesPopup.Designer.cs">
+      <DependentUpon>EntidadesPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="subOptionsArchivos\GruposEntidadesPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subOptionsArchivos\GruposEntidadesPopup.Designer.cs">
+      <DependentUpon>GruposEntidadesPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="subOptionsSistema\Acercade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subOptionsSistema\Acercade.Designer.cs">
+      <DependentUpon>Acercade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="subOptionsSistema\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subOptionsSistema\Login.designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SellPointDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SellPointDataSet.xsd</DependentUpon>
+    <Compile Include="subOptionsArchivos\TiposEntidadesPopup.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="subOptionsArchivos\TiposEntidadesPopup.Designer.cs">
+      <DependentUpon>TiposEntidadesPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="subOptionsSistema\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subOptionsSistema\Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="subOptionsArchivos\EntidadesPopup.resx">
+      <DependentUpon>EntidadesPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subOptionsArchivos\GruposEntidadesPopup.resx">
+      <DependentUpon>GruposEntidadesPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subOptionsSistema\Acercade.resx">
+      <DependentUpon>Acercade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subOptionsSistema\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -87,7 +114,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
+    <EmbeddedResource Include="subOptionsArchivos\TiposEntidadesPopup.resx">
+      <DependentUpon>TiposEntidadesPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subOptionsSistema\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,34 +129,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SellPointDataSet.xsc">
-      <DependentUpon>SellPointDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SellPointDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SellPointDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SellPointDataSet.xss">
-      <DependentUpon>SellPointDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
-      <Project>{af9bb425-a9df-44de-8ac8-23a280f3e4b7}</Project>
-      <Name>CapaDatos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaPresentacion\CapaPresentacion.csproj">
-      <Project>{5c07af7c-b586-405f-b02a-847fe9d8a0f1}</Project>
-      <Name>CapaPresentacion</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Negocio\CapaNegocios.csproj">
-      <Project>{2a59d46e-d3b4-4bfd-a4b1-dab5f0d6c87f}</Project>
-      <Name>CapaNegocios</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
