@@ -70,16 +70,17 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.42105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.57895F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 378F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 504F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 271F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 1);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(752, 30);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1003, 37);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // label1
@@ -88,9 +89,10 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(174, 0);
+            this.label1.Location = new System.Drawing.Point(231, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(372, 30);
+            this.label1.Size = new System.Drawing.Size(496, 37);
             this.label1.TabIndex = 2;
             this.label1.Text = "Tipos de Entidades";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -100,9 +102,10 @@ namespace WindowsFormsApp
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Location = new System.Drawing.Point(4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 24);
+            this.button1.Size = new System.Drawing.Size(56, 29);
             this.button1.TabIndex = 0;
             this.button1.Text = "Find";
             this.button1.UseVisualStyleBackColor = true;
@@ -113,9 +116,10 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(51, 3);
+            this.textBox1.Location = new System.Drawing.Point(68, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
+            this.textBox1.Size = new System.Drawing.Size(155, 22);
             this.textBox1.TabIndex = 1;
             // 
             // tabControl1
@@ -125,11 +129,12 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 30);
+            this.tabControl1.Location = new System.Drawing.Point(0, 37);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(752, 452);
+            this.tabControl1.Size = new System.Drawing.Size(1003, 556);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
@@ -150,52 +155,59 @@ namespace WindowsFormsApp
             this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(744, 426);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(995, 527);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Modificador";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(566, 381);
+            this.button3.Location = new System.Drawing.Point(755, 469);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 46;
             this.button3.Text = "Modify";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(647, 381);
+            this.button4.Location = new System.Drawing.Point(863, 469);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 45;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 140);
+            this.comboBox1.Location = new System.Drawing.Point(32, 172);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(146, 21);
+            this.comboBox1.Size = new System.Drawing.Size(193, 24);
             this.comboBox1.TabIndex = 44;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 124);
+            this.label4.Location = new System.Drawing.Point(28, 153);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.Size = new System.Drawing.Size(117, 17);
             this.label4.TabIndex = 28;
             this.label4.Text = "ID Grupo Entidad";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(693, 432);
+            this.button2.Location = new System.Drawing.Point(924, 532);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 27;
             this.button2.Text = "Save";
             this.button2.UseVisualStyleBackColor = true;
@@ -204,17 +216,19 @@ namespace WindowsFormsApp
             // 
             this.panel5.Controls.Add(this.checkBox2);
             this.panel5.Controls.Add(this.checkBox1);
-            this.panel5.Location = new System.Drawing.Point(24, 319);
+            this.panel5.Location = new System.Drawing.Point(32, 393);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(120, 46);
+            this.panel5.Size = new System.Drawing.Size(160, 57);
             this.panel5.TabIndex = 26;
             // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(0, 26);
+            this.checkBox2.Location = new System.Drawing.Point(0, 32);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(87, 17);
+            this.checkBox2.Size = new System.Drawing.Size(112, 21);
             this.checkBox2.TabIndex = 29;
             this.checkBox2.Text = "NoEliminable";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -222,78 +236,87 @@ namespace WindowsFormsApp
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(0, 3);
+            this.checkBox1.Location = new System.Drawing.Point(0, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(56, 17);
+            this.checkBox1.Size = new System.Drawing.Size(70, 21);
             this.checkBox1.TabIndex = 28;
             this.checkBox1.Text = "Status";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(484, 81);
+            this.textBox8.Location = new System.Drawing.Point(645, 100);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox8.Multiline = true;
             this.textBox8.Name = "textBox8";
             this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox8.Size = new System.Drawing.Size(238, 281);
+            this.textBox8.Size = new System.Drawing.Size(316, 345);
             this.textBox8.TabIndex = 25;
             // 
             // descripcion_label
             // 
             this.descripcion_label.AutoSize = true;
-            this.descripcion_label.Location = new System.Drawing.Point(214, 68);
+            this.descripcion_label.Location = new System.Drawing.Point(285, 84);
+            this.descripcion_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.descripcion_label.Name = "descripcion_label";
-            this.descripcion_label.Size = new System.Drawing.Size(63, 13);
+            this.descripcion_label.Size = new System.Drawing.Size(82, 17);
             this.descripcion_label.TabIndex = 22;
             this.descripcion_label.Text = "Descripcion";
             // 
             // comentario_label
             // 
             this.comentario_label.AutoSize = true;
-            this.comentario_label.Location = new System.Drawing.Point(481, 68);
+            this.comentario_label.Location = new System.Drawing.Point(641, 84);
+            this.comentario_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.comentario_label.Name = "comentario_label";
-            this.comentario_label.Size = new System.Drawing.Size(60, 13);
+            this.comentario_label.Size = new System.Drawing.Size(80, 17);
             this.comentario_label.TabIndex = 24;
             this.comentario_label.Text = "Comentario";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(217, 84);
+            this.textBox4.Location = new System.Drawing.Point(289, 103);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(238, 281);
+            this.textBox4.Size = new System.Drawing.Size(316, 345);
             this.textBox4.TabIndex = 23;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(24, 200);
+            this.textBox3.Location = new System.Drawing.Point(32, 246);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 20);
+            this.textBox3.Size = new System.Drawing.Size(193, 22);
             this.textBox3.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 184);
+            this.label3.Location = new System.Drawing.Point(28, 226);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.Size = new System.Drawing.Size(104, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Fecha Registro";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(24, 84);
+            this.textBox2.Location = new System.Drawing.Point(32, 103);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
+            this.textBox2.Size = new System.Drawing.Size(193, 22);
             this.textBox2.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 68);
+            this.label2.Location = new System.Drawing.Point(28, 84);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.Size = new System.Drawing.Size(105, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "ID Tipo Entidad";
             // 
@@ -303,17 +326,19 @@ namespace WindowsFormsApp
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(744, 426);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(995, 527);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visualizador";
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(663, 397);
+            this.button5.Location = new System.Drawing.Point(884, 489);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(100, 28);
             this.button5.TabIndex = 31;
             this.button5.Text = "Delete";
             this.button5.UseVisualStyleBackColor = true;
@@ -324,19 +349,22 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 7);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(735, 385);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(980, 474);
             this.dataGridView1.TabIndex = 0;
             // 
             // TiposEntidadesPopup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 482);
+            this.ClientSize = new System.Drawing.Size(1000, 593);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TiposEntidadesPopup";
             this.Text = "TiposEntidadesPopup";
             this.tableLayoutPanel1.ResumeLayout(false);
