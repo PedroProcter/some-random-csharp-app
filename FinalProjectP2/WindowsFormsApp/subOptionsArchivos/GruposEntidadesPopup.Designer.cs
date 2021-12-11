@@ -34,15 +34,14 @@ namespace WindowsFormsApp
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.eliminableCheckBox = new System.Windows.Forms.CheckBox();
+            this.statusCheckBox = new System.Windows.Forms.CheckBox();
+            this.ComentarioTextBox = new System.Windows.Forms.TextBox();
             this.descripcion_label = new System.Windows.Forms.Label();
             this.comentario_label = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.id_grupo_entidad_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
@@ -51,6 +50,8 @@ namespace WindowsFormsApp
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fechaRegistroDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.clearControlsButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -76,16 +77,17 @@ namespace WindowsFormsApp
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPage1.Controls.Add(this.clearControlsButton);
+            this.tabPage1.Controls.Add(this.fechaRegistroDatePicker);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.panel5);
-            this.tabPage1.Controls.Add(this.textBox8);
+            this.tabPage1.Controls.Add(this.ComentarioTextBox);
             this.tabPage1.Controls.Add(this.descripcion_label);
             this.tabPage1.Controls.Add(this.comentario_label);
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.descripcionTextBox);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.id_grupo_entidad_textBox);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
@@ -111,44 +113,45 @@ namespace WindowsFormsApp
             this.button2.TabIndex = 27;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.checkBox2);
-            this.panel5.Controls.Add(this.checkBox1);
+            this.panel5.Controls.Add(this.eliminableCheckBox);
+            this.panel5.Controls.Add(this.statusCheckBox);
             this.panel5.Location = new System.Drawing.Point(24, 319);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(120, 46);
             this.panel5.TabIndex = 26;
             // 
-            // checkBox2
+            // eliminableCheckBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(0, 26);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(87, 17);
-            this.checkBox2.TabIndex = 29;
-            this.checkBox2.Text = "NoEliminable";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.eliminableCheckBox.AutoSize = true;
+            this.eliminableCheckBox.Location = new System.Drawing.Point(0, 26);
+            this.eliminableCheckBox.Name = "eliminableCheckBox";
+            this.eliminableCheckBox.Size = new System.Drawing.Size(87, 17);
+            this.eliminableCheckBox.TabIndex = 29;
+            this.eliminableCheckBox.Text = "NoEliminable";
+            this.eliminableCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // statusCheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(0, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(56, 17);
-            this.checkBox1.TabIndex = 28;
-            this.checkBox1.Text = "Status";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.statusCheckBox.AutoSize = true;
+            this.statusCheckBox.Location = new System.Drawing.Point(0, 3);
+            this.statusCheckBox.Name = "statusCheckBox";
+            this.statusCheckBox.Size = new System.Drawing.Size(56, 17);
+            this.statusCheckBox.TabIndex = 28;
+            this.statusCheckBox.Text = "Status";
+            this.statusCheckBox.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // ComentarioTextBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(482, 84);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox8.Size = new System.Drawing.Size(238, 281);
-            this.textBox8.TabIndex = 25;
+            this.ComentarioTextBox.Location = new System.Drawing.Point(482, 84);
+            this.ComentarioTextBox.Multiline = true;
+            this.ComentarioTextBox.Name = "ComentarioTextBox";
+            this.ComentarioTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ComentarioTextBox.Size = new System.Drawing.Size(238, 281);
+            this.ComentarioTextBox.TabIndex = 25;
             // 
             // descripcion_label
             // 
@@ -168,21 +171,14 @@ namespace WindowsFormsApp
             this.comentario_label.TabIndex = 24;
             this.comentario_label.Text = "Comentario";
             // 
-            // textBox4
+            // descripcionTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(204, 84);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox4.Size = new System.Drawing.Size(238, 281);
-            this.textBox4.TabIndex = 23;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(24, 137);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(146, 20);
-            this.textBox3.TabIndex = 3;
+            this.descripcionTextBox.Location = new System.Drawing.Point(204, 84);
+            this.descripcionTextBox.Multiline = true;
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.descripcionTextBox.Size = new System.Drawing.Size(238, 281);
+            this.descripcionTextBox.TabIndex = 23;
             // 
             // label3
             // 
@@ -193,12 +189,12 @@ namespace WindowsFormsApp
             this.label3.TabIndex = 2;
             this.label3.Text = "Fecha Registro";
             // 
-            // textBox2
+            // id_grupo_entidad_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(24, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 1;
+            this.id_grupo_entidad_textBox.Location = new System.Drawing.Point(24, 84);
+            this.id_grupo_entidad_textBox.Name = "id_grupo_entidad_textBox";
+            this.id_grupo_entidad_textBox.Size = new System.Drawing.Size(146, 20);
+            this.id_grupo_entidad_textBox.TabIndex = 1;
             // 
             // label2
             // 
@@ -297,6 +293,25 @@ namespace WindowsFormsApp
             this.textBox1.Size = new System.Drawing.Size(119, 20);
             this.textBox1.TabIndex = 1;
             // 
+            // fechaRegistroDatePicker
+            // 
+            this.fechaRegistroDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechaRegistroDatePicker.Location = new System.Drawing.Point(24, 137);
+            this.fechaRegistroDatePicker.Name = "fechaRegistroDatePicker";
+            this.fechaRegistroDatePicker.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.fechaRegistroDatePicker.Size = new System.Drawing.Size(146, 20);
+            this.fechaRegistroDatePicker.TabIndex = 29;
+            // 
+            // clearControlsButton
+            // 
+            this.clearControlsButton.Location = new System.Drawing.Point(482, 384);
+            this.clearControlsButton.Name = "clearControlsButton";
+            this.clearControlsButton.Size = new System.Drawing.Size(75, 23);
+            this.clearControlsButton.TabIndex = 30;
+            this.clearControlsButton.Text = "Clear";
+            this.clearControlsButton.UseVisualStyleBackColor = true;
+            this.clearControlsButton.Click += new System.EventHandler(this.clearControlsButton_Click);
+            // 
             // GruposEntidadesPopup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,19 +346,20 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox id_grupo_entidad_textBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox ComentarioTextBox;
         private System.Windows.Forms.Label descripcion_label;
         private System.Windows.Forms.Label comentario_label;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox eliminableCheckBox;
+        private System.Windows.Forms.CheckBox statusCheckBox;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DateTimePicker fechaRegistroDatePicker;
+        private System.Windows.Forms.Button clearControlsButton;
     }
 }
