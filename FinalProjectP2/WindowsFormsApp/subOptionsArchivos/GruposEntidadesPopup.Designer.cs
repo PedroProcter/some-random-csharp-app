@@ -29,6 +29,7 @@ namespace WindowsFormsApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.clearControlsButton = new System.Windows.Forms.Button();
@@ -50,12 +51,23 @@ namespace WindowsFormsApp
             this.label1 = new System.Windows.Forms.Label();
             this.findGrupoEntidadButton = new System.Windows.Forms.Button();
             this.idGrupoEntidadTextBox = new System.Windows.Forms.TextBox();
+            this.sellPointDataSet = new WindowsFormsApp.SellPointDataSet();
+            this.gruposEntidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gruposEntidadesTableAdapter = new WindowsFormsApp.SellPointDataSetTableAdapters.GruposEntidadesTableAdapter();
+            this.idGrupoEntidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comentarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noEliminableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaRegistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruposEntidadesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,8 +77,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 38);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 31);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -87,13 +98,11 @@ namespace WindowsFormsApp
             this.tabPage1.Controls.Add(this.descripcionTextBox);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(742, 406);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Modificador";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // clearControlsButton
             // 
@@ -128,7 +137,7 @@ namespace WindowsFormsApp
             // 
             this.button2.Location = new System.Drawing.Point(642, 353);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
+            this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 27;
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = true;
@@ -146,10 +155,9 @@ namespace WindowsFormsApp
             // eliminableCheckBox
             // 
             this.eliminableCheckBox.AutoSize = true;
-            this.eliminableCheckBox.Location = new System.Drawing.Point(0, 32);
-            this.eliminableCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.eliminableCheckBox.Location = new System.Drawing.Point(0, 26);
             this.eliminableCheckBox.Name = "eliminableCheckBox";
-            this.eliminableCheckBox.Size = new System.Drawing.Size(112, 21);
+            this.eliminableCheckBox.Size = new System.Drawing.Size(87, 17);
             this.eliminableCheckBox.TabIndex = 29;
             this.eliminableCheckBox.Text = "NoEliminable";
             this.eliminableCheckBox.UseVisualStyleBackColor = true;
@@ -157,10 +165,9 @@ namespace WindowsFormsApp
             // statusCheckBox
             // 
             this.statusCheckBox.AutoSize = true;
-            this.statusCheckBox.Location = new System.Drawing.Point(0, 4);
-            this.statusCheckBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.statusCheckBox.Location = new System.Drawing.Point(0, 3);
             this.statusCheckBox.Name = "statusCheckBox";
-            this.statusCheckBox.Size = new System.Drawing.Size(70, 21);
+            this.statusCheckBox.Size = new System.Drawing.Size(56, 17);
             this.statusCheckBox.TabIndex = 28;
             this.statusCheckBox.Text = "Status";
             this.statusCheckBox.UseVisualStyleBackColor = true;
@@ -171,7 +178,7 @@ namespace WindowsFormsApp
             this.ComentarioTextBox.Multiline = true;
             this.ComentarioTextBox.Name = "ComentarioTextBox";
             this.ComentarioTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ComentarioTextBox.Size = new System.Drawing.Size(316, 345);
+            this.ComentarioTextBox.Size = new System.Drawing.Size(238, 281);
             this.ComentarioTextBox.TabIndex = 25;
             // 
             // descripcion_label
@@ -179,7 +186,7 @@ namespace WindowsFormsApp
             this.descripcion_label.AutoSize = true;
             this.descripcion_label.Location = new System.Drawing.Point(198, 37);
             this.descripcion_label.Name = "descripcion_label";
-            this.descripcion_label.Size = new System.Drawing.Size(82, 17);
+            this.descripcion_label.Size = new System.Drawing.Size(63, 13);
             this.descripcion_label.TabIndex = 22;
             this.descripcion_label.Text = "Descripcion";
             // 
@@ -188,7 +195,7 @@ namespace WindowsFormsApp
             this.comentario_label.AutoSize = true;
             this.comentario_label.Location = new System.Drawing.Point(476, 37);
             this.comentario_label.Name = "comentario_label";
-            this.comentario_label.Size = new System.Drawing.Size(80, 17);
+            this.comentario_label.Size = new System.Drawing.Size(60, 13);
             this.comentario_label.TabIndex = 24;
             this.comentario_label.Text = "Comentario";
             // 
@@ -198,7 +205,7 @@ namespace WindowsFormsApp
             this.descripcionTextBox.Multiline = true;
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.descripcionTextBox.Size = new System.Drawing.Size(316, 345);
+            this.descripcionTextBox.Size = new System.Drawing.Size(238, 281);
             this.descripcionTextBox.TabIndex = 23;
             // 
             // label3
@@ -206,7 +213,7 @@ namespace WindowsFormsApp
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(18, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 17);
+            this.label3.Size = new System.Drawing.Size(79, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Fecha Registro";
             // 
@@ -216,16 +223,16 @@ namespace WindowsFormsApp
             this.tabPage2.Controls.Add(this.deleteGrupoEntidadButton);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tabPage2.Size = new System.Drawing.Size(992, 527);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(742, 406);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visualizador";
             // 
             // deleteGrupoEntidadButton
             // 
-            this.deleteGrupoEntidadButton.Location = new System.Drawing.Point(660, 396);
+            this.deleteGrupoEntidadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteGrupoEntidadButton.Location = new System.Drawing.Point(661, 377);
             this.deleteGrupoEntidadButton.Name = "deleteGrupoEntidadButton";
             this.deleteGrupoEntidadButton.Size = new System.Drawing.Size(75, 23);
             this.deleteGrupoEntidadButton.TabIndex = 30;
@@ -236,16 +243,24 @@ namespace WindowsFormsApp
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 4);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idGrupoEntidadDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn,
+            this.comentarioDataGridViewTextBoxColumn,
+            this.estatusDataGridViewTextBoxColumn,
+            this.noEliminableDataGridViewTextBoxColumn,
+            this.fechaRegistroDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.gruposEntidadesBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(734, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(736, 400);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -256,16 +271,15 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.42105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.57895F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 418F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 163F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.findGrupoEntidadButton, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.idGrupoEntidadTextBox, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(-1, 2);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1005, 37);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(754, 30);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // label1
@@ -274,9 +288,9 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(175, 0);
+            this.label1.Location = new System.Drawing.Point(173, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(549, 37);
+            this.label1.Size = new System.Drawing.Size(412, 30);
             this.label1.TabIndex = 2;
             this.label1.Text = "Grupos de Entidades";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -288,7 +302,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.findGrupoEntidadButton.Location = new System.Drawing.Point(3, 3);
             this.findGrupoEntidadButton.Name = "findGrupoEntidadButton";
-            this.findGrupoEntidadButton.Size = new System.Drawing.Size(43, 24);
+            this.findGrupoEntidadButton.Size = new System.Drawing.Size(42, 24);
             this.findGrupoEntidadButton.TabIndex = 0;
             this.findGrupoEntidadButton.Text = "Find";
             this.findGrupoEntidadButton.UseVisualStyleBackColor = true;
@@ -300,21 +314,76 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.idGrupoEntidadTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idGrupoEntidadTextBox.Location = new System.Drawing.Point(52, 3);
+            this.idGrupoEntidadTextBox.Location = new System.Drawing.Point(51, 3);
             this.idGrupoEntidadTextBox.Name = "idGrupoEntidadTextBox";
-            this.idGrupoEntidadTextBox.Size = new System.Drawing.Size(117, 20);
+            this.idGrupoEntidadTextBox.Size = new System.Drawing.Size(116, 20);
             this.idGrupoEntidadTextBox.TabIndex = 1;
+            // 
+            // sellPointDataSet
+            // 
+            this.sellPointDataSet.DataSetName = "SellPointDataSet";
+            this.sellPointDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gruposEntidadesBindingSource
+            // 
+            this.gruposEntidadesBindingSource.DataMember = "GruposEntidades";
+            this.gruposEntidadesBindingSource.DataSource = this.sellPointDataSet;
+            // 
+            // gruposEntidadesTableAdapter
+            // 
+            this.gruposEntidadesTableAdapter.ClearBeforeFill = true;
+            // 
+            // idGrupoEntidadDataGridViewTextBoxColumn
+            // 
+            this.idGrupoEntidadDataGridViewTextBoxColumn.DataPropertyName = "IdGrupoEntidad";
+            this.idGrupoEntidadDataGridViewTextBoxColumn.HeaderText = "IdGrupoEntidad";
+            this.idGrupoEntidadDataGridViewTextBoxColumn.Name = "idGrupoEntidadDataGridViewTextBoxColumn";
+            this.idGrupoEntidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // comentarioDataGridViewTextBoxColumn
+            // 
+            this.comentarioDataGridViewTextBoxColumn.DataPropertyName = "Comentario";
+            this.comentarioDataGridViewTextBoxColumn.HeaderText = "Comentario";
+            this.comentarioDataGridViewTextBoxColumn.Name = "comentarioDataGridViewTextBoxColumn";
+            this.comentarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            this.estatusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // noEliminableDataGridViewTextBoxColumn
+            // 
+            this.noEliminableDataGridViewTextBoxColumn.DataPropertyName = "NoEliminable";
+            this.noEliminableDataGridViewTextBoxColumn.HeaderText = "NoEliminable";
+            this.noEliminableDataGridViewTextBoxColumn.Name = "noEliminableDataGridViewTextBoxColumn";
+            this.noEliminableDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaRegistroDataGridViewTextBoxColumn
+            // 
+            this.fechaRegistroDataGridViewTextBoxColumn.DataPropertyName = "FechaRegistro";
+            this.fechaRegistroDataGridViewTextBoxColumn.HeaderText = "FechaRegistro";
+            this.fechaRegistroDataGridViewTextBoxColumn.Name = "fechaRegistroDataGridViewTextBoxColumn";
+            this.fechaRegistroDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // GruposEntidadesPopup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(750, 462);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "GruposEntidadesPopup";
             this.Text = "GruposEntidades";
             this.Load += new System.EventHandler(this.GruposEntidadesPopup_Load);
@@ -327,6 +396,8 @@ namespace WindowsFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruposEntidadesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -354,5 +425,14 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Button deleteGrupoEntidadButton;
         private System.Windows.Forms.DateTimePicker fechaRegistroDatePicker;
         private System.Windows.Forms.Button clearControlsButton;
+        private SellPointDataSet sellPointDataSet;
+        private System.Windows.Forms.BindingSource gruposEntidadesBindingSource;
+        private SellPointDataSetTableAdapters.GruposEntidadesTableAdapter gruposEntidadesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idGrupoEntidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comentarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noEliminableDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistroDataGridViewTextBoxColumn;
     }
 }

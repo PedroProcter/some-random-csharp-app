@@ -34,8 +34,22 @@ namespace WindowsFormsApp
             int noEliminable = 0;
             if (statusCheckBox.Checked) status = "Activa";
             if (eliminableCheckBox.Checked) noEliminable = 1;
+
+            int old_count = dataGridView1.Rows.Count;
+
             datos.InsertarGruposEntidades(descripcionTextBox.Text, ComentarioTextBox.Text, status, noEliminable, fechaRegistroDatePicker.Text);
             updateDataGridView();
+
+            if (dataGridView1.Rows.Count != old_count)
+            {
+                MessageBox.Show("Row Inserted Sucessfully...");
+            }
+            else
+            {
+                MessageBox.Show("ERROR: Row not inserted");
+            }
+
+            
         }
 
         private void clearControlsButton_Click(object sender, EventArgs e)
@@ -45,26 +59,34 @@ namespace WindowsFormsApp
 
         private void GruposEntidadesPopup_Load(object sender, EventArgs e)
         {
-           dataGridView1.DataSource = datos.ListarGrupoEntidades();
+            // TODO: esta línea de código carga datos en la tabla 'sellPointDataSet.GruposEntidades' Puede moverla o quitarla según sea necesario.
+            this.gruposEntidadesTableAdapter.Fill(this.sellPointDataSet.GruposEntidades);
         }
 
         private void deleteGrupoEntidadButton_Click(object sender, EventArgs e)
         {
+            int old_count = dataGridView1.Rows.Count;
             try {
                 datos.EliminarGruposEntidades(int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
+                updateDataGridView();
             } catch {
                 
             }
-            
-            updateDataGridView();
+
+            if (dataGridView1.Rows.Count != old_count)
+            {
+                MessageBox.Show("Row Deleted Sucessfully...");
+            }
+            else
+            {
+                MessageBox.Show("ERROR: Row not deleted");
+            }
+
+           
         }
 
         private void updateDataGridView() {
-            while (dataGridView1.Rows.Count > 0)
-            {
-                dataGridView1.Rows.RemoveAt(0);
-            }
-            dataGridView1.DataSource = datos.ListarGrupoEntidades();
+            this.gruposEntidadesTableAdapter.Fill(this.sellPointDataSet.GruposEntidades);
         }
 
         private void findGrupoEntidadButton_Click(object sender, EventArgs e)
@@ -93,13 +115,35 @@ namespace WindowsFormsApp
             if (statusCheckBox.Checked) status = "Activa";
             if (eliminableCheckBox.Checked) noEliminable = 1;
 
-            datos.UpdateGruposEntidades(Convert.ToInt32(idGrupoEntidadTextBox.Text), descripcionTextBox.Text, ComentarioTextBox.Text, status, noEliminable, fechaRegistroDatePicker.Text);
-            updateDataGridView();
+            try {
+                datos.UpdateGruposEntidades(Convert.ToInt32(idGrupoEntidadTextBox.Text), descripcionTextBox.Text, ComentarioTextBox.Text, status, noEliminable, fechaRegistroDatePicker.Text);
+                updateDataGridView();
+
+                MessageBox.Show("Row Modify Sucessfully...");
+            } catch {
+                MessageBox.Show("ERROR: Row Not Inserted...");
+            }
+
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedRows.Count != 0) {
+                DataGridViewCellCollection row = dataGridView1.SelectedRows[0].Cells;
 
+                bool status = false;
+                bool eliminable = false;
+                if (row[3].Value.ToString() == "Activa") status = true;
+                if (row[4].Value.ToString() == "1") eliminable = true;
+
+                idGrupoEntidadTextBox.Text = row[0].Value.ToString();
+                descripcionTextBox.Text = row[1].Value.ToString();
+                ComentarioTextBox.Text = row[2].Value.ToString();
+                statusCheckBox.Checked = status;
+                eliminableCheckBox.Checked = eliminable;
+                fechaRegistroDatePicker.Value = DateTime.Parse(row[5].Value.ToString());
+            }
+            
         }
     }
 }
