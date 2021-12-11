@@ -20,7 +20,7 @@ namespace WindowsFormsApp
         private Presentacion presentacion = new Presentacion();
         byte editar= 0;
         int id;
-        int numDocumento;
+        long numDocumento;
 
 
         public EntidadesPopup()
@@ -166,7 +166,7 @@ namespace WindowsFormsApp
 
         private void txtNumDocumento_Leave(object sender, EventArgs e)
         {
-            numDocumento = Convert.ToInt32(txtNumDocumento.Text);
+            numDocumento = long.Parse(txtNumDocumento.Text);
         }
 
         private void txtDireccion_Enter(object sender, EventArgs e)
@@ -226,6 +226,12 @@ namespace WindowsFormsApp
                 eliminableCheckBox.Checked = false;
         }
 
-    
+        private void txtNumDocumento_Enter(object sender, EventArgs e)
+        {
+            if (cbTipoDocumento.Text == "RNC" || cbTipoDocumento.Text == "Cedula")
+                txtNumDocumento.MaxLength = 14;
+            else if (cbTipoDocumento.Text == "Pasaporte")
+                txtNumDocumento.MaxLength = 10;
+        }
     }
 }

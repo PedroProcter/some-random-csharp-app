@@ -9,7 +9,7 @@ namespace CapaPresentacion
     public class Presentacion
     {
         string numDocumento = null;
-        public string ConversionDatos(int value, string TipoDocumento)
+        public string ConversionDatos(long value, string TipoDocumento)
         {
 
             switch (TipoDocumento)

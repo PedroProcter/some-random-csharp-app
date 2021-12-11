@@ -39,13 +39,11 @@ namespace CapaDatos
 
         //TODOS LOS INSERT SE ENCUENTRAN AQUI
 
-        // cambiar tipo de dato por referencia
-        public void InsertarEntidades(string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, int NumeroDocumento, string Telefonos, string URLPaginaWeb, string  URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, int IdGrupoEntidad, int IdTipoEntidad, int LimiteCredito, string UserNameEntidad, string PassworEntidad, string  RolUserEntidad, string Comentario, string Estatus, int NoEliminable, DateTime FechaRegistro)
+        public void InsertarEntidades(string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, long NumeroDocumento, string Telefonos, string URLPaginaWeb, string  URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, int IdGrupoEntidad, int IdTipoEntidad, int LimiteCredito, string UserNameEntidad, string PassworEntidad, string  RolUserEntidad, string Comentario, string Estatus, int NoEliminable, DateTime FechaRegistro)
         {
             comando.Connection = OpenBD();
             comando.CommandText = "SpEntidadesInsertar";
             comando.CommandType = CommandType.StoredProcedure;
-            //comando.Parameters.AddWithValue("@IdEntidad",IdEntidad);
             comando.Parameters.AddWithValue("@Descripcion",Descripcion);
             comando.Parameters.AddWithValue("@Direccion",Direccion);
             comando.Parameters.AddWithValue("@Localidad",Localidad);
@@ -109,7 +107,7 @@ namespace CapaDatos
 
         //UPDATES
 
-        public void UpdateEntidades(int IdEntidad, string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, int NumeroDocumento, string Telefonos, string URLPaginaWeb, string URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, int IdGrupoEntidad, int IdTipoEntidad, int LimiteCredito, string UserNameEntidad, string PassworEntidad, string RolUserEntidad, string Comentario, string Estatus, int NoEliminable, DateTime FechaRegistro)
+        public void UpdateEntidades(int IdEntidad, string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, long NumeroDocumento, string Telefonos, string URLPaginaWeb, string URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, int IdGrupoEntidad, int IdTipoEntidad, int LimiteCredito, string UserNameEntidad, string PassworEntidad, string RolUserEntidad, string Comentario, string Estatus, int NoEliminable, DateTime FechaRegistro)
         {
             comando.Connection = OpenBD();
             comando.CommandText = "SpEntidadesActualizar";
@@ -335,24 +333,5 @@ namespace CapaDatos
             Display =  "Descripcion";
             return tabla;
         }
-
-        public void RellenarTextBox()
-        {
-            comando.Connection = OpenBD();
-            comando.CommandText = "cargarGruposEntidades";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-
-            if(leer.Read())
-            {
-                //aqui va el array que almacenara todos los datos de los textbox 
-                //array[0]= leer["NOMBRE DE LA  COLUMNA"].ToString();
-            }
-        }
-
-        /*
-         *  EL TEMA DE SIGUIENTE, ANTERIOR, PRIEMERO Y ULTIMO EN CASO DE QUE SE DESEE IMPLEMENTAR SE DISCUTIRA AL FINAL
-         * 
-         */
     }
 }

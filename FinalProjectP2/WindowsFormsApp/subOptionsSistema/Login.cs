@@ -28,21 +28,22 @@ namespace WindowsFormsApp
         private void button1_Click(object sender, EventArgs e)
         {
             Form1 formulario = new Form1();
-            if (txtUser.Text == "Bryan" || txtPass.Text == "Admin")
+            if (txtUser.Text == "Bryan" && txtPass.Text == "Admin")
             {
                 this.Close();
                 User = "Bryan";
                 formulario.Show();
-            }else if (txtUser.Text == "Johanny" || txtPass.Text == "Admin")
+            }else if (txtUser.Text == "Johanny" && txtPass.Text == "Admin")
             {
-                User = "Johanny";
+                
                 this.Close();
+                User = "Johanny";
                 formulario.Show();
             }
-            else if (txtUser.Text == "Pedro" || txtPass.Text == "Admin")
+            else if (txtUser.Text == "Pedro" && txtPass.Text == "Admin")
             {
-                User = "Pedro";
                 this.Close();
+                User = "Pedro";
                 formulario.Show();
             }else
             {
