@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WindowsFormsApp
 {
     public partial class GruposEntidadesPopup : Form
@@ -29,9 +30,9 @@ namespace WindowsFormsApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string status = "Inactivo";
+            string status = "Inactiva";
             int noEliminable = 0;
-            if (statusCheckBox.Checked) status = "Activo";
+            if (statusCheckBox.Checked) status = "Activa";
             if (eliminableCheckBox.Checked) noEliminable = 1;
             datos.InsertarGruposEntidades(descripcionTextBox.Text, ComentarioTextBox.Text, status, noEliminable, fechaRegistroDatePicker.Text);
         }
@@ -39,6 +40,16 @@ namespace WindowsFormsApp
         private void clearControlsButton_Click(object sender, EventArgs e)
         {
             clearControls();
+        }
+
+        private void GruposEntidadesPopup_Load(object sender, EventArgs e)
+        {
+           dataGridView1.DataSource = datos.ListarGrupoEntidades();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -14,7 +14,7 @@ namespace CapaDatos
         public static string Value, Display;
         string[] array = new string[18]; 
 
-        private static string StringConnectionSQLServer= ConfigurationManager.ConnectionStrings["WindowsFormsApp.Properties.Settings.StringConnectionSQLServer"].ToString();  // = "Server = DESKTOP-3B0O51K\\MYSERVER;DataBase=MiPrimeraVez;Integrated Security = true";
+        private static string StringConnectionSQLServer=    "Server = DESKTOP-3B0O51K\\MYSERVER;DataBase=SellPoint;Integrated Security = true"; //ConfigurationManager.ConnectionStrings["StringConnectionSQLServer"].ToString();
         SqlDataReader leer;
         DataTable tabla = new DataTable();
         SqlCommand comando = new SqlCommand();
@@ -89,7 +89,7 @@ namespace CapaDatos
         }
 
 
-        public void InsertarTiposEntidades(string Descripcion, int IdGrupoEntidad,string Comentario, string Estatus, int NoEliminable, string FechaRegistro)
+        public void InsertarTiposEntidades(string Descripcion, int IdGrupoEntidad,string Comentario, string Estatus, int NoEliminable, DateTime FechaRegistro)
         {
             comando.Connection = OpenBD();
             comando.CommandText = "SpTiposEntidadesInsertar";
@@ -159,7 +159,7 @@ namespace CapaDatos
         }
 
 
-        public void UpdateTiposEntidades(int IdTipoEntidad,string Descripcion, int IdGrupoEntidad, string Comentario, string Estatus, int NoEliminable, string FechaRegistro)
+        public void UpdateTiposEntidades(int IdTipoEntidad,string Descripcion, int IdGrupoEntidad, string Comentario, string Estatus, int NoEliminable, DateTime FechaRegistro)
         {
             comando.Connection = OpenBD();
             comando.CommandText = "SpTiposEntidadesActualizar";

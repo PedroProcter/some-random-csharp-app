@@ -30,32 +30,35 @@ namespace WindowsFormsApp
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUser = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 397);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
+            // txtUser
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(220, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(443, 25);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "USUARIO";
+            this.txtUser.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Location = new System.Drawing.Point(220, 113);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(443, 25);
+            this.txtUser.TabIndex = 1;
+            this.txtUser.Text = "USUARIO";
+            this.txtUser.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
             // 
             // label1
             // 
@@ -77,31 +80,36 @@ namespace WindowsFormsApp
             this.label2.TabIndex = 4;
             this.label2.Text = "____________________________________________________";
             // 
-            // textBox2
+            // txtPass
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(220, 190);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(443, 25);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "CONTRASEÑA";
+            this.txtPass.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Location = new System.Drawing.Point(220, 190);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(443, 25);
+            this.txtPass.TabIndex = 2;
+            this.txtPass.Text = "CONTRASEÑA";
+            this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
+            this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(284, 280);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(308, 40);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 0;
             this.button1.Text = "LOGIN";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(389, 326);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 25);
+            this.button2.Size = new System.Drawing.Size(89, 40);
             this.button2.TabIndex = 6;
             this.button2.Text = "SALIR";
             this.button2.UseVisualStyleBackColor = true;
@@ -115,9 +123,9 @@ namespace WindowsFormsApp
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.panel1);
             this.Name = "Login";
             this.Text = "Login";
@@ -130,10 +138,10 @@ namespace WindowsFormsApp
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

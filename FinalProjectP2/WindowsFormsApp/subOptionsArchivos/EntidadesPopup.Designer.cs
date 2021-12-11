@@ -40,8 +40,8 @@ namespace WindowsFormsApp
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.eliminableCheckBox = new System.Windows.Forms.CheckBox();
+            this.statusCheckBox = new System.Windows.Forms.CheckBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -89,7 +89,7 @@ namespace WindowsFormsApp
             this.button3 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridEntidades = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -98,7 +98,7 @@ namespace WindowsFormsApp
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEntidades)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -107,12 +107,12 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.75221F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.24779F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 492F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 259F));
             this.tableLayoutPanel1.Controls.Add(this.find_textBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 1);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -123,10 +123,10 @@ namespace WindowsFormsApp
             // 
             this.find_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.find_textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.find_textBox.Location = new System.Drawing.Point(93, 7);
+            this.find_textBox.Location = new System.Drawing.Point(91, 7);
             this.find_textBox.Margin = new System.Windows.Forms.Padding(4, 7, 4, 4);
             this.find_textBox.Name = "find_textBox";
-            this.find_textBox.Size = new System.Drawing.Size(153, 22);
+            this.find_textBox.Size = new System.Drawing.Size(149, 22);
             this.find_textBox.TabIndex = 3;
             // 
             // button1
@@ -135,9 +135,9 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(4, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 30);
+            this.button1.Size = new System.Drawing.Size(79, 30);
             this.button1.TabIndex = 2;
             this.button1.Text = "Find";
             this.button1.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(254, 0);
+            this.label1.Location = new System.Drawing.Point(248, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(484, 38);
@@ -164,7 +164,7 @@ namespace WindowsFormsApp
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(0, 43);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -214,38 +214,41 @@ namespace WindowsFormsApp
             this.tabPage1.Controls.Add(this.textBox27);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(993, 519);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Modificador";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(763, 480);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 28);
             this.button2.TabIndex = 83;
             this.button2.Text = "Modify";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(871, 480);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 82;
             this.button4.Text = "Add";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(24, 149);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(169, 24);
             this.comboBox3.TabIndex = 81;
@@ -254,47 +257,48 @@ namespace WindowsFormsApp
             // 
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(24, 86);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(169, 24);
             this.comboBox4.TabIndex = 80;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.checkBox3);
-            this.panel6.Controls.Add(this.checkBox4);
+            this.panel6.Controls.Add(this.eliminableCheckBox);
+            this.panel6.Controls.Add(this.statusCheckBox);
             this.panel6.Location = new System.Drawing.Point(811, 416);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(160, 57);
             this.panel6.TabIndex = 79;
             // 
-            // checkBox3
+            // eliminableCheckBox
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(0, 32);
-            this.checkBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(112, 21);
-            this.checkBox3.TabIndex = 29;
-            this.checkBox3.Text = "NoEliminable";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.eliminableCheckBox.AutoSize = true;
+            this.eliminableCheckBox.Location = new System.Drawing.Point(0, 32);
+            this.eliminableCheckBox.Margin = new System.Windows.Forms.Padding(4);
+            this.eliminableCheckBox.Name = "eliminableCheckBox";
+            this.eliminableCheckBox.Size = new System.Drawing.Size(112, 21);
+            this.eliminableCheckBox.TabIndex = 29;
+            this.eliminableCheckBox.Text = "NoEliminable";
+            this.eliminableCheckBox.UseVisualStyleBackColor = true;
+            this.eliminableCheckBox.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // checkBox4
+            // statusCheckBox
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(0, 4);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(70, 21);
-            this.checkBox4.TabIndex = 28;
-            this.checkBox4.Text = "Status";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.statusCheckBox.AutoSize = true;
+            this.statusCheckBox.Location = new System.Drawing.Point(0, 4);
+            this.statusCheckBox.Margin = new System.Windows.Forms.Padding(4);
+            this.statusCheckBox.Name = "statusCheckBox";
+            this.statusCheckBox.Size = new System.Drawing.Size(70, 21);
+            this.statusCheckBox.TabIndex = 28;
+            this.statusCheckBox.Text = "Status";
+            this.statusCheckBox.UseVisualStyleBackColor = true;
             // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(395, 217);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(169, 22);
             this.textBox5.TabIndex = 78;
@@ -312,7 +316,7 @@ namespace WindowsFormsApp
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(395, 149);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(169, 22);
             this.textBox6.TabIndex = 76;
@@ -330,7 +334,7 @@ namespace WindowsFormsApp
             // textBox13
             // 
             this.textBox13.Location = new System.Drawing.Point(395, 86);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(4);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(169, 22);
             this.textBox13.TabIndex = 74;
@@ -348,7 +352,7 @@ namespace WindowsFormsApp
             // textBox16
             // 
             this.textBox16.Location = new System.Drawing.Point(577, 26);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox16.Margin = new System.Windows.Forms.Padding(4);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(169, 22);
             this.textBox16.TabIndex = 72;
@@ -376,7 +380,7 @@ namespace WindowsFormsApp
             // textBox18
             // 
             this.textBox18.Location = new System.Drawing.Point(395, 26);
-            this.textBox18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(4);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(169, 22);
             this.textBox18.TabIndex = 68;
@@ -394,7 +398,7 @@ namespace WindowsFormsApp
             // textBox19
             // 
             this.textBox19.Location = new System.Drawing.Point(577, 86);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox19.Margin = new System.Windows.Forms.Padding(4);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(169, 22);
             this.textBox19.TabIndex = 70;
@@ -402,7 +406,7 @@ namespace WindowsFormsApp
             // textBox20
             // 
             this.textBox20.Location = new System.Drawing.Point(24, 217);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox20.Margin = new System.Windows.Forms.Padding(4);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(169, 22);
             this.textBox20.TabIndex = 66;
@@ -414,7 +418,7 @@ namespace WindowsFormsApp
             this.panel7.Controls.Add(this.radioButton8);
             this.panel7.Controls.Add(this.radioButton9);
             this.panel7.Location = new System.Drawing.Point(811, 272);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(160, 123);
             this.panel7.TabIndex = 65;
@@ -423,7 +427,7 @@ namespace WindowsFormsApp
             // 
             this.radioButton7.AutoSize = true;
             this.radioButton7.Location = new System.Drawing.Point(4, 89);
-            this.radioButton7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton7.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton7.Name = "radioButton7";
             this.radioButton7.Size = new System.Drawing.Size(59, 21);
             this.radioButton7.TabIndex = 24;
@@ -445,7 +449,7 @@ namespace WindowsFormsApp
             // 
             this.radioButton8.AutoSize = true;
             this.radioButton8.Location = new System.Drawing.Point(4, 60);
-            this.radioButton8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton8.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton8.Name = "radioButton8";
             this.radioButton8.Size = new System.Drawing.Size(97, 21);
             this.radioButton8.TabIndex = 1;
@@ -457,7 +461,7 @@ namespace WindowsFormsApp
             // 
             this.radioButton9.AutoSize = true;
             this.radioButton9.Location = new System.Drawing.Point(4, 32);
-            this.radioButton9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton9.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton9.Name = "radioButton9";
             this.radioButton9.Size = new System.Drawing.Size(68, 21);
             this.radioButton9.TabIndex = 0;
@@ -481,7 +485,7 @@ namespace WindowsFormsApp
             this.panel8.Controls.Add(this.radioButton10);
             this.panel8.Controls.Add(this.radioButton11);
             this.panel8.Location = new System.Drawing.Point(811, 6);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(160, 105);
             this.panel8.TabIndex = 62;
@@ -500,7 +504,7 @@ namespace WindowsFormsApp
             // 
             this.radioButton10.AutoSize = true;
             this.radioButton10.Location = new System.Drawing.Point(4, 60);
-            this.radioButton10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton10.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton10.Name = "radioButton10";
             this.radioButton10.Size = new System.Drawing.Size(78, 21);
             this.radioButton10.TabIndex = 1;
@@ -512,7 +516,7 @@ namespace WindowsFormsApp
             // 
             this.radioButton11.AutoSize = true;
             this.radioButton11.Location = new System.Drawing.Point(4, 32);
-            this.radioButton11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton11.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton11.Name = "radioButton11";
             this.radioButton11.Size = new System.Drawing.Size(65, 21);
             this.radioButton11.TabIndex = 0;
@@ -527,7 +531,7 @@ namespace WindowsFormsApp
             this.panel9.Controls.Add(this.radioButton13);
             this.panel9.Controls.Add(this.radioButton14);
             this.panel9.Location = new System.Drawing.Point(811, 129);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(160, 123);
             this.panel9.TabIndex = 63;
@@ -536,7 +540,7 @@ namespace WindowsFormsApp
             // 
             this.radioButton12.AutoSize = true;
             this.radioButton12.Location = new System.Drawing.Point(4, 89);
-            this.radioButton12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton12.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton12.Name = "radioButton12";
             this.radioButton12.Size = new System.Drawing.Size(94, 21);
             this.radioButton12.TabIndex = 24;
@@ -558,7 +562,7 @@ namespace WindowsFormsApp
             // 
             this.radioButton13.AutoSize = true;
             this.radioButton13.Location = new System.Drawing.Point(4, 60);
-            this.radioButton13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton13.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton13.Name = "radioButton13";
             this.radioButton13.Size = new System.Drawing.Size(73, 21);
             this.radioButton13.TabIndex = 1;
@@ -570,7 +574,7 @@ namespace WindowsFormsApp
             // 
             this.radioButton14.AutoSize = true;
             this.radioButton14.Location = new System.Drawing.Point(4, 32);
-            this.radioButton14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton14.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton14.Name = "radioButton14";
             this.radioButton14.Size = new System.Drawing.Size(58, 21);
             this.radioButton14.TabIndex = 0;
@@ -591,7 +595,7 @@ namespace WindowsFormsApp
             // textBox21
             // 
             this.textBox21.Location = new System.Drawing.Point(395, 287);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox21.Margin = new System.Windows.Forms.Padding(4);
             this.textBox21.Multiline = true;
             this.textBox21.Name = "textBox21";
             this.textBox21.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -631,7 +635,7 @@ namespace WindowsFormsApp
             // textBox22
             // 
             this.textBox22.Location = new System.Drawing.Point(207, 217);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox22.Margin = new System.Windows.Forms.Padding(4);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(169, 22);
             this.textBox22.TabIndex = 55;
@@ -639,7 +643,7 @@ namespace WindowsFormsApp
             // textBox23
             // 
             this.textBox23.Location = new System.Drawing.Point(24, 287);
-            this.textBox23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox23.Margin = new System.Windows.Forms.Padding(4);
             this.textBox23.Multiline = true;
             this.textBox23.Name = "textBox23";
             this.textBox23.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -659,7 +663,7 @@ namespace WindowsFormsApp
             // textBox24
             // 
             this.textBox24.Location = new System.Drawing.Point(207, 26);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox24.Margin = new System.Windows.Forms.Padding(4);
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(169, 22);
             this.textBox24.TabIndex = 53;
@@ -687,7 +691,7 @@ namespace WindowsFormsApp
             // textBox25
             // 
             this.textBox25.Location = new System.Drawing.Point(24, 26);
-            this.textBox25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox25.Margin = new System.Windows.Forms.Padding(4);
             this.textBox25.Name = "textBox25";
             this.textBox25.Size = new System.Drawing.Size(169, 22);
             this.textBox25.TabIndex = 47;
@@ -695,7 +699,7 @@ namespace WindowsFormsApp
             // textBox26
             // 
             this.textBox26.Location = new System.Drawing.Point(207, 149);
-            this.textBox26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox26.Margin = new System.Windows.Forms.Padding(4);
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(169, 22);
             this.textBox26.TabIndex = 51;
@@ -723,7 +727,7 @@ namespace WindowsFormsApp
             // textBox27
             // 
             this.textBox27.Location = new System.Drawing.Point(207, 86);
-            this.textBox27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox27.Margin = new System.Windows.Forms.Padding(4);
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(169, 22);
             this.textBox27.TabIndex = 49;
@@ -731,7 +735,7 @@ namespace WindowsFormsApp
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(924, 532);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 27;
@@ -742,11 +746,11 @@ namespace WindowsFormsApp
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.gridEntidades);
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(993, 519);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visualizador";
@@ -754,25 +758,25 @@ namespace WindowsFormsApp
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(879, 480);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 28);
             this.button5.TabIndex = 31;
             this.button5.Text = "Delete";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // gridEntidades
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gridEntidades.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 7);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(979, 465);
-            this.dataGridView1.TabIndex = 0;
+            this.gridEntidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridEntidades.Location = new System.Drawing.Point(8, 7);
+            this.gridEntidades.Margin = new System.Windows.Forms.Padding(4);
+            this.gridEntidades.Name = "gridEntidades";
+            this.gridEntidades.RowHeadersWidth = 51;
+            this.gridEntidades.Size = new System.Drawing.Size(979, 465);
+            this.gridEntidades.TabIndex = 0;
             // 
             // EntidadesPopup
             // 
@@ -782,9 +786,10 @@ namespace WindowsFormsApp
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EntidadesPopup";
             this.Text = "Entidades";
+            this.Load += new System.EventHandler(this.EntidadesPopup_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -799,7 +804,7 @@ namespace WindowsFormsApp
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridEntidades)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -814,12 +819,12 @@ namespace WindowsFormsApp
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gridEntidades;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox eliminableCheckBox;
+        private System.Windows.Forms.CheckBox statusCheckBox;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox6;
