@@ -89,7 +89,7 @@ namespace CapaDatos
         }
 
 
-        public void InsertarTiposEntidades(string Descripcion, int IdGrupoEntidad,string Comentario, string Estatus, int NoEliminable, string FechaRegistro)
+        public void InsertarTiposEntidades(string Descripcion, int IdGrupoEntidad,string Comentario, string Estatus, int NoEliminable, DateTime FechaRegistro)
         {
             comando.Connection = OpenBD();
             comando.CommandText = "SpTiposEntidadesInsertar";
@@ -159,7 +159,7 @@ namespace CapaDatos
         }
 
 
-        public void UpdateTiposEntidades(int IdTipoEntidad,string Descripcion, int IdGrupoEntidad, string Comentario, string Estatus, int NoEliminable, string FechaRegistro)
+        public void UpdateTiposEntidades(int IdTipoEntidad,string Descripcion, int IdGrupoEntidad, string Comentario, string Estatus, int NoEliminable, DateTime FechaRegistro)
         {
             comando.Connection = OpenBD();
             comando.CommandText = "SpTiposEntidadesActualizar";
