@@ -39,7 +39,7 @@ namespace CapaDatos
         //TODOS LOS INSERT SE ENCUENTRAN AQUI
 
         // cambiar tipo de dato por referencia
-        public void InsertarEntidades(string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, int NumeroDocumento, string Telefonos, string URLPaginaWeb, string  URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, int IdGrupoEntidad, int IdTipoEntidad, int LimiteCredito, string UserNameEntidad, string PassworEntidad, string  RolUserEntidad, string Comentario, string Estatus, int NoEliminable, string FechaRegistro)
+        public void InsertarEntidades(string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, int NumeroDocumento, string Telefonos, string URLPaginaWeb, string  URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, int IdGrupoEntidad, int IdTipoEntidad, int LimiteCredito, string UserNameEntidad, string PassworEntidad, string  RolUserEntidad, string Comentario, string Estatus, int NoEliminable, DateTime FechaRegistro)
         {
             comando.Connection = OpenBD();
             comando.CommandText = "SpEntidadesInsertar";
@@ -108,7 +108,7 @@ namespace CapaDatos
 
         //UPDATES
 
-        public void UpdateEntidades(int IdEntidad, string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, int NumeroDocumento, string Telefonos, string URLPaginaWeb, string URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, int IdGrupoEntidad, int IdTipoEntidad, int LimiteCredito, string UserNameEntidad, string PassworEntidad, string RolUserEntidad, string Comentario, string Estatus, int NoEliminable, string FechaRegistro)
+        public void UpdateEntidades(int IdEntidad, string Descripcion, string Direccion, string Localidad, string TipoEntidad, string TipoDocumento, int NumeroDocumento, string Telefonos, string URLPaginaWeb, string URLFacebook, string URLInstagram, string URLTwitter, string URLTikTok, int IdGrupoEntidad, int IdTipoEntidad, int LimiteCredito, string UserNameEntidad, string PassworEntidad, string RolUserEntidad, string Comentario, string Estatus, int NoEliminable, DateTime FechaRegistro)
         {
             comando.Connection = OpenBD();
             comando.CommandText = "SpEntidadesActualizar";

@@ -14,6 +14,8 @@ namespace WindowsFormsApp
     public partial class EntidadesPopup : Form
     {
         private Datos datos = new Datos();
+        byte editar= 0;
+        int id;
 
 
         public EntidadesPopup()
@@ -23,30 +25,130 @@ namespace WindowsFormsApp
 
         private void clearControls()
         {
-            //descripcionTextBox.Text = "";
-            //ComentarioTextBox.Text = "";
-            //statusCheckBox.Checked = false;
-            //eliminableCheckBox.Checked = false;
-            //fechaRegistroDatePicker.Text = "";
+            //limpiar combo box
+
+            txtDescripcion.Clear();
+            txtDireccion.Clear();
+            txtLocalidad.Clear();
+           // cbIdTipoEntidad.Clear();
+            //cbTipoDocumento.Clear();
+            txtNumDocumento.Clear();
+            txtTelefono.Clear();
+            txtWeb.Clear();
+            txtFacebook.Clear();
+            txtInstagram.Clear();
+            txtTwitter.Clear();
+            txtTikTok.Clear();
+            //cbIdGrupoEntidad.Clear();
+            //cbIdTipoEntidad.
+            txtLimiteCredito.Clear();
+            txtUserName.Clear();
+            txtPassword.Clear();
+            txtComentario.Clear();
+            dateTimePicker1.Value = DateTime.Today;
         }
 
         private void EntidadesPopup_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = datos.ListarEntidades();
+
+            cbIdGrupoEntidad.DataSource = datos.cargarComboBox();
+            cbIdGrupoEntidad.ValueMember = Datos.Value;
+            cbIdGrupoEntidad.DisplayMember = Datos.Value;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             string status = "Inactiva";
             int noEliminable = 0;
+            string Rol = "User"; //crearle sentencias if segun cada opcion
             if (statusCheckBox.Checked) status = "Activa";
             if (eliminableCheckBox.Checked) noEliminable = 1;
-            //este es el boton de guardar
+            if (rbAdmin.Checked) Rol = "Admin";
+            if (rbSupervisor.Checked) Rol = "supervisor";
+           
+            try
+            {
+                if (editar == 0)
+                {
+                    datos.InsertarEntidades(txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbIdTipoEntidad.Text, cbTipoDocumento.Text, Convert.ToInt32(txtNumDocumento.Text), txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), TabPages.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
+
+                }
+
+                else
+                {
+                    try
+                    {
+                        datos.UpdateEntidades(id,txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbIdTipoEntidad.Text, cbTipoDocumento.Text, Convert.ToInt32(txtNumDocumento.Text), txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), TabPages.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
+                        editar = 0;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("no se pudo insertar los datos por: " + ex);
+                    }
+
+                }
+
+                clearControls();
+                dataGridView1.DataSource = datos.ListarEntidades();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se pudo insertar los datos por: " + ex);
+            }
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                Datos datos = new Datos();
+                find_textBox.Text = dataGridView1.CurrentRow.Cells["IdEntidad"].Value.ToString();
+                datos.EliminarEntidades(Convert.ToInt32(find_textBox.Text));
+                MessageBox.Show("Eliminado correctamente");
+
+                dataGridView1.DataSource = datos.ListarEntidades();
+            }
+            else
+                MessageBox.Show("seleccione una fila por favor");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Datos datos = new Datos();
+            try
+            {
+                dataGridView1.DataSource = datos.BuscarEntidades(Convert.ToInt32(find_textBox.Text));
+                clearControls();
+
+                if (dataGridView1.RowCount <= 1)
+                {
+                    MessageBox.Show("no se encontro ningun archivo, revise el nombre y vuelvalo a escribir");
+                    Datos datos1 = new Datos();
+                    dataGridView1.DataSource = datos1.ListarTiposEntidades();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se pudo continuar la busqueda porque: " + ex);
+                dataGridView1.DataSource = datos.ListarTiposEntidades();
+            }
+        }
+
+        private void cbTipoEntidad_Click(object sender, EventArgs e)
+        {
+            datos.cargarComboBox2(Convert.ToInt32(cbIdGrupoEntidad.Text));
+
+            cbIdTipoEntidad.ValueMember = Datos.Value ;
+                cbIdTipoEntidad.DisplayMember = Datos.Value;
         }
     }
 }
