@@ -41,7 +41,7 @@ namespace WindowsFormsApp
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            toolStripStatusLabel1.Text = DateTime.Now.ToLongTimeString();
+            toolStripStatusLabel1.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,8 +59,6 @@ namespace WindowsFormsApp
             acercade1.Show();
         }
 
-     
-
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -68,9 +66,10 @@ namespace WindowsFormsApp
             this.Close();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            GC.Collect();
+            Environment.Exit(0);
         }
     }
 }
