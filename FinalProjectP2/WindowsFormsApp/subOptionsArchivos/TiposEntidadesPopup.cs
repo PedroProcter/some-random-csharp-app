@@ -39,6 +39,17 @@ namespace WindowsFormsApp
             dataGridView1.DataSource = dt.ListarTiposEntidades();
         }
 
+        private void clearCosntrols()
+        {
+            txtComentario.Clear();
+            txtDescripcion.Clear();
+            textBox1.Clear();
+            
+            statusCheckBox.Checked = false;
+            eliminableCheckBox.Checked = false;
+            dateTimePicker1.Value = DateTime.Today;
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             Datos datos = new Datos();
