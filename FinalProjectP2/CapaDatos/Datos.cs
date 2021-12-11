@@ -335,24 +335,4 @@ namespace CapaDatos
             Display =  "Descripcion";
             return tabla;
         }
-
-        public void RellenarTextBox()
-        {
-            comando.Connection = OpenBD();
-            comando.CommandText = "cargarGruposEntidades";
-            comando.CommandType = CommandType.StoredProcedure;
-            leer = comando.ExecuteReader();
-
-            if(leer.Read())
-            {
-                //aqui va el array que almacenara todos los datos de los textbox 
-                //array[0]= leer["NOMBRE DE LA  COLUMNA"].ToString();
-            }
-        }
-
-        /*
-         *  EL TEMA DE SIGUIENTE, ANTERIOR, PRIEMERO Y ULTIMO EN CASO DE QUE SE DESEE IMPLEMENTAR SE DISCUTIRA AL FINAL
-         * 
-         */
-    }
 }
