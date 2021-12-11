@@ -12,8 +12,7 @@ namespace CapaDatos
     public class Datos
     {
         public static string Value, Display;
-        string[] array; 
-        array = new string[18];
+        string[] array = new string[18]; 
 
         private static string StringConnectionSQLServer= ConfigurationManager.ConnectionStrings["WindowsFormsApp.Properties.Settings.StringConnectionSQLServer"].ToString();  // = "Server = DESKTOP-3B0O51K\\MYSERVER;DataBase=MiPrimeraVez;Integrated Security = true";
         SqlDataReader leer;
