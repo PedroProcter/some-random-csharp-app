@@ -14,3 +14,19 @@ C:\Users\The Gentleman\source\repos\FinalProjectP2\FinalProjectP2\WindowsFormsAp
 C:\Users\The Gentleman\source\repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.pdb
 C:\Users\The Gentleman\source\repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.subOptionsSistema.Acercade.resources
 C:\Users\The Gentleman\source\repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.subOptionsSistema.Splash.resources
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe.config
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\bin\Debug\WindowsFormsApp.pdb
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.AssemblyReference.cache
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.EntidadesPopup.resources
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.Form1.resources
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.GruposEntidadesPopup.resources
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.subOptionsSistema.Acercade.resources
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.Login.resources
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.Properties.Resources.resources
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.TiposEntidadesPopup.resources
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.subOptionsSistema.Splash.resources
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.GenerateResource.cache
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CoreCompileInputs.cache
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.exe
+C:\Users\scarl\Source\Repos\FinalProjectP2\FinalProjectP2\WindowsFormsApp\obj\Debug\WindowsFormsApp.pdb
