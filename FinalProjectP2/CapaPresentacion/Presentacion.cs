@@ -8,25 +8,26 @@ namespace CapaPresentacion
 {
     public class Presentacion
     {
+        string numDocumento = null;
         public string ConversionDatos(int value, string TipoDocumento)
         {
-            string numDocumento = null;  
-            //switch (TipoDocumento)
-            //{
-               
-            //    case "RNC":
-            //        numDocumeto = value.ToString("###-#######-#");
-            //    break;
 
-            //    case "Cedula":
-            //        numDocumeto = value.ToString("#-##-########");
-            //    break;
+            switch (TipoDocumento)
+            {
 
-            //    case "Pasaporte":
-            //        numDocumeto = value.ToString("#########");
-            //    break;
-               
-            //}
+                case "Cedula":
+                    numDocumento = value.ToString("###-#######-#");
+                    break;
+
+                case "RNC":
+                    numDocumento = value.ToString("#-##-########");
+                    break;
+
+                case "Pasaporte":
+                    numDocumento = value.ToString("#########");
+                    break;
+
+            }
             return numDocumento;
 
         }

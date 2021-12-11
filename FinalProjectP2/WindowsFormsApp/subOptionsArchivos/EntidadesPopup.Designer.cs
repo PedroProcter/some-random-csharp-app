@@ -102,7 +102,7 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.75221F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.24779F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 369F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 193F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
             this.tableLayoutPanel1.Controls.Add(this.find_textBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
@@ -117,7 +117,7 @@ namespace WindowsFormsApp
             // 
             this.find_textBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.find_textBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.find_textBox.Location = new System.Drawing.Point(69, 6);
+            this.find_textBox.Location = new System.Drawing.Point(68, 6);
             this.find_textBox.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.find_textBox.Name = "find_textBox";
             this.find_textBox.Size = new System.Drawing.Size(112, 20);
@@ -130,7 +130,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(60, 25);
+            this.button1.Size = new System.Drawing.Size(59, 25);
             this.button1.TabIndex = 2;
             this.button1.Text = "Find";
             this.button1.UseVisualStyleBackColor = true;
@@ -142,7 +142,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 0);
+            this.label1.Location = new System.Drawing.Point(186, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(363, 31);
             this.label1.TabIndex = 0;
@@ -277,7 +277,6 @@ namespace WindowsFormsApp
             this.cbTipoEntidad.Name = "cbTipoEntidad";
             this.cbTipoEntidad.Size = new System.Drawing.Size(128, 21);
             this.cbTipoEntidad.TabIndex = 84;
-            this.cbTipoEntidad.Click += new System.EventHandler(this.cbTipoEntidad_Click);
             // 
             // label22
             // 
@@ -314,7 +313,6 @@ namespace WindowsFormsApp
             this.cbIdTipoEntidad.Name = "cbIdTipoEntidad";
             this.cbIdTipoEntidad.Size = new System.Drawing.Size(128, 21);
             this.cbIdTipoEntidad.TabIndex = 81;
-            this.cbIdTipoEntidad.SelectedIndexChanged += new System.EventHandler(this.cbIdTipoEntidad_SelectedIndexChanged);
             // 
             // cbIdGrupoEntidad
             // 
@@ -323,7 +321,7 @@ namespace WindowsFormsApp
             this.cbIdGrupoEntidad.Name = "cbIdGrupoEntidad";
             this.cbIdGrupoEntidad.Size = new System.Drawing.Size(128, 21);
             this.cbIdGrupoEntidad.TabIndex = 80;
-            this.cbIdGrupoEntidad.SelectedIndexChanged += new System.EventHandler(this.cbIdGrupoEntidad_SelectedIndexChanged);
+            this.cbIdGrupoEntidad.Leave += new System.EventHandler(this.cbIdGrupoEntidad_Leave);
             // 
             // panel6
             // 
@@ -465,6 +463,7 @@ namespace WindowsFormsApp
             // rbUser
             // 
             this.rbUser.AutoSize = true;
+            this.rbUser.Checked = true;
             this.rbUser.Location = new System.Drawing.Point(3, 72);
             this.rbUser.Name = "rbUser";
             this.rbUser.Size = new System.Drawing.Size(47, 17);
@@ -589,6 +588,7 @@ namespace WindowsFormsApp
             this.txtNumDocumento.Name = "txtNumDocumento";
             this.txtNumDocumento.Size = new System.Drawing.Size(128, 20);
             this.txtNumDocumento.TabIndex = 53;
+            this.txtNumDocumento.Leave += new System.EventHandler(this.txtNumDocumento_Leave);
             // 
             // label29
             // 
@@ -630,6 +630,7 @@ namespace WindowsFormsApp
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(128, 20);
             this.txtDireccion.TabIndex = 49;
+            this.txtDireccion.Enter += new System.EventHandler(this.txtDireccion_Enter);
             // 
             // button3
             // 

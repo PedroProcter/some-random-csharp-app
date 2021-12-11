@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDatos;
 using Negocio;
+using CapaPresentacion;
 
 namespace WindowsFormsApp
 {
@@ -16,8 +17,10 @@ namespace WindowsFormsApp
     {
         private Datos datos = new Datos();
         private CNegocio negocio = new CNegocio();
+        private Presentacion presentacion = new Presentacion();
         byte editar= 0;
         int id;
+        int numDocumento;
 
 
         public EntidadesPopup()
@@ -70,19 +73,24 @@ namespace WindowsFormsApp
             string status = "Inactiva";
             int noEliminable = 0;
             string Rol = "User"; //crearle sentencias if segun cada opcion
+            
             if (statusCheckBox.Checked) status = "Activa";
             if (eliminableCheckBox.Checked) noEliminable = 1;
             if (rbAdmin.Checked) Rol = "Admin";
             if (rbSupervisor.Checked) Rol = "supervisor";
             int limite = Convert.ToInt32(txtLimiteCredito.Text);
-           
+
+            
+            
+
+
             try
             {
                 if (editar == 0)
                 {
                     if (Convert.ToInt32(negocio.ValidarLimiteCredito(limite)) > 0)
                      {
-                        datos.InsertarEntidades(txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbTipoEntidad.Text, cbTipoDocumento.Text, Convert.ToInt32(txtNumDocumento.Text), txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), txtUserName.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
+                        datos.InsertarEntidades(txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbTipoEntidad.Text, cbTipoDocumento.Text, numDocumento, txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), txtUserName.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
                     }
                      else
                         MessageBox.Show(negocio.ValidarLimiteCredito(limite));
@@ -96,7 +104,7 @@ namespace WindowsFormsApp
                     {
                         if (Convert.ToInt32(negocio.ValidarLimiteCredito(limite)) > 0)
                         {
-                            datos.UpdateEntidades(id, txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbTipoEntidad.Text, cbTipoDocumento.Text, Convert.ToInt32(txtNumDocumento.Text), txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), txtUserName.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
+                            datos.UpdateEntidades(id, txtDescripcion.Text, txtDireccion.Text, txtLocalidad.Text, cbTipoEntidad.Text, cbTipoDocumento.Text, numDocumento, txtTelefono.Text, txtWeb.Text, txtFacebook.Text, txtInstagram.Text, txtTwitter.Text, txtTikTok.Text, Convert.ToInt32(cbIdGrupoEntidad.Text), Convert.ToInt32(cbIdTipoEntidad.Text), Convert.ToInt32(txtLimiteCredito.Text), txtUserName.Text, txtPassword.Text, Rol, txtComentario.Text, status, noEliminable, Convert.ToDateTime(dateTimePicker1.Value));
                             editar = 0;
                         }
 
@@ -168,28 +176,24 @@ namespace WindowsFormsApp
             }
         }
 
-        private void cbTipoEntidad_Click(object sender, EventArgs e)
+        private void txtNumDocumento_Leave(object sender, EventArgs e)
         {
-            Datos datos = new Datos();
-            datos.cargarComboBox2(Convert.ToInt32(cbIdGrupoEntidad.Text));
-
-                cbIdTipoEntidad.ValueMember = Datos.Value2 ;
-                cbIdTipoEntidad.DisplayMember = Datos.Value2;
+            numDocumento = Convert.ToInt32(txtNumDocumento.Text);
         }
 
-        private void cbIdTipoEntidad_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtDireccion_Enter(object sender, EventArgs e)
         {
-            Datos datos = new Datos();
+            txtNumDocumento.Text = presentacion.ConversionDatos(numDocumento, cbTipoDocumento.Text);
+        }
 
-            datos.cargarComboBox2(Convert.ToInt32(cbIdGrupoEntidad.Text));
+        private void cbIdGrupoEntidad_Leave(object sender, EventArgs e)
+        {
+            Datos datos1 = new Datos();
 
-            //cbIdTipoEntidad.ValueMember = Datos.Value2;
+               cbIdTipoEntidad.DataSource =  datos1.cargarComboBox2(Convert.ToInt32(cbIdGrupoEntidad.Text));
+
+            cbIdTipoEntidad.ValueMember = Datos.Value2;
             cbIdTipoEntidad.DisplayMember = Datos.Value2;
-        }
-
-        private void cbIdGrupoEntidad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
         }
     }
 }
