@@ -29,6 +29,7 @@ namespace WindowsFormsApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.clearControlsButton = new System.Windows.Forms.Button();
@@ -50,12 +51,23 @@ namespace WindowsFormsApp
             this.label1 = new System.Windows.Forms.Label();
             this.findGrupoEntidadButton = new System.Windows.Forms.Button();
             this.idGrupoEntidadTextBox = new System.Windows.Forms.TextBox();
+            this.sellPointDataSet = new WindowsFormsApp.SellPointDataSet();
+            this.gruposEntidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gruposEntidadesTableAdapter = new WindowsFormsApp.SellPointDataSetTableAdapters.GruposEntidadesTableAdapter();
+            this.idGrupoEntidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comentarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noEliminableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaRegistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruposEntidadesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -91,7 +103,6 @@ namespace WindowsFormsApp
             this.tabPage1.Size = new System.Drawing.Size(742, 406);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Modificador";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // clearControlsButton
             // 
@@ -214,13 +225,14 @@ namespace WindowsFormsApp
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(742, 426);
+            this.tabPage2.Size = new System.Drawing.Size(742, 406);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Visualizador";
             // 
             // deleteGrupoEntidadButton
             // 
-            this.deleteGrupoEntidadButton.Location = new System.Drawing.Point(660, 396);
+            this.deleteGrupoEntidadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteGrupoEntidadButton.Location = new System.Drawing.Point(661, 377);
             this.deleteGrupoEntidadButton.Name = "deleteGrupoEntidadButton";
             this.deleteGrupoEntidadButton.Size = new System.Drawing.Size(75, 23);
             this.deleteGrupoEntidadButton.TabIndex = 30;
@@ -231,15 +243,24 @@ namespace WindowsFormsApp
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 3);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idGrupoEntidadDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn,
+            this.comentarioDataGridViewTextBoxColumn,
+            this.estatusDataGridViewTextBoxColumn,
+            this.noEliminableDataGridViewTextBoxColumn,
+            this.fechaRegistroDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.gruposEntidadesBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(734, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(736, 400);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -250,7 +271,7 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.42105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.57895F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 418F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 163F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.findGrupoEntidadButton, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.idGrupoEntidadTextBox, 1, 0);
@@ -267,7 +288,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(175, 0);
+            this.label1.Location = new System.Drawing.Point(173, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(412, 30);
             this.label1.TabIndex = 2;
@@ -281,7 +302,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.findGrupoEntidadButton.Location = new System.Drawing.Point(3, 3);
             this.findGrupoEntidadButton.Name = "findGrupoEntidadButton";
-            this.findGrupoEntidadButton.Size = new System.Drawing.Size(43, 24);
+            this.findGrupoEntidadButton.Size = new System.Drawing.Size(42, 24);
             this.findGrupoEntidadButton.TabIndex = 0;
             this.findGrupoEntidadButton.Text = "Find";
             this.findGrupoEntidadButton.UseVisualStyleBackColor = true;
@@ -293,10 +314,66 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.idGrupoEntidadTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idGrupoEntidadTextBox.Location = new System.Drawing.Point(52, 3);
+            this.idGrupoEntidadTextBox.Location = new System.Drawing.Point(51, 3);
             this.idGrupoEntidadTextBox.Name = "idGrupoEntidadTextBox";
-            this.idGrupoEntidadTextBox.Size = new System.Drawing.Size(117, 20);
+            this.idGrupoEntidadTextBox.Size = new System.Drawing.Size(116, 20);
             this.idGrupoEntidadTextBox.TabIndex = 1;
+            // 
+            // sellPointDataSet
+            // 
+            this.sellPointDataSet.DataSetName = "SellPointDataSet";
+            this.sellPointDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gruposEntidadesBindingSource
+            // 
+            this.gruposEntidadesBindingSource.DataMember = "GruposEntidades";
+            this.gruposEntidadesBindingSource.DataSource = this.sellPointDataSet;
+            // 
+            // gruposEntidadesTableAdapter
+            // 
+            this.gruposEntidadesTableAdapter.ClearBeforeFill = true;
+            // 
+            // idGrupoEntidadDataGridViewTextBoxColumn
+            // 
+            this.idGrupoEntidadDataGridViewTextBoxColumn.DataPropertyName = "IdGrupoEntidad";
+            this.idGrupoEntidadDataGridViewTextBoxColumn.HeaderText = "IdGrupoEntidad";
+            this.idGrupoEntidadDataGridViewTextBoxColumn.Name = "idGrupoEntidadDataGridViewTextBoxColumn";
+            this.idGrupoEntidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // comentarioDataGridViewTextBoxColumn
+            // 
+            this.comentarioDataGridViewTextBoxColumn.DataPropertyName = "Comentario";
+            this.comentarioDataGridViewTextBoxColumn.HeaderText = "Comentario";
+            this.comentarioDataGridViewTextBoxColumn.Name = "comentarioDataGridViewTextBoxColumn";
+            this.comentarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            this.estatusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // noEliminableDataGridViewTextBoxColumn
+            // 
+            this.noEliminableDataGridViewTextBoxColumn.DataPropertyName = "NoEliminable";
+            this.noEliminableDataGridViewTextBoxColumn.HeaderText = "NoEliminable";
+            this.noEliminableDataGridViewTextBoxColumn.Name = "noEliminableDataGridViewTextBoxColumn";
+            this.noEliminableDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaRegistroDataGridViewTextBoxColumn
+            // 
+            this.fechaRegistroDataGridViewTextBoxColumn.DataPropertyName = "FechaRegistro";
+            this.fechaRegistroDataGridViewTextBoxColumn.HeaderText = "FechaRegistro";
+            this.fechaRegistroDataGridViewTextBoxColumn.Name = "fechaRegistroDataGridViewTextBoxColumn";
+            this.fechaRegistroDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // GruposEntidadesPopup
             // 
@@ -319,6 +396,8 @@ namespace WindowsFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sellPointDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruposEntidadesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -346,5 +425,14 @@ namespace WindowsFormsApp
         private System.Windows.Forms.Button deleteGrupoEntidadButton;
         private System.Windows.Forms.DateTimePicker fechaRegistroDatePicker;
         private System.Windows.Forms.Button clearControlsButton;
+        private SellPointDataSet sellPointDataSet;
+        private System.Windows.Forms.BindingSource gruposEntidadesBindingSource;
+        private SellPointDataSetTableAdapters.GruposEntidadesTableAdapter gruposEntidadesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idGrupoEntidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comentarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noEliminableDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistroDataGridViewTextBoxColumn;
     }
 }
