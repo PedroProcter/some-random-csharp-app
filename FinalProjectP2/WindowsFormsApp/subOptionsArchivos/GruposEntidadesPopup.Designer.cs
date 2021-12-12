@@ -139,7 +139,7 @@ namespace WindowsFormsApp
             this.modifyGrupoEntidadButton.Name = "modifyGrupoEntidadButton";
             this.modifyGrupoEntidadButton.Size = new System.Drawing.Size(75, 23);
             this.modifyGrupoEntidadButton.TabIndex = 28;
-            this.modifyGrupoEntidadButton.Text = "Modify";
+            this.modifyGrupoEntidadButton.Text = "         Modify";
             this.modifyGrupoEntidadButton.UseVisualStyleBackColor = false;
             this.modifyGrupoEntidadButton.Click += new System.EventHandler(this.modifyGrupoEntidadButton_Click);
             // 
@@ -343,7 +343,7 @@ namespace WindowsFormsApp
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.42105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.57895F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 418F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.findGrupoEntidadButton, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.idGrupoEntidadTextBox, 1, 0);
@@ -360,7 +360,7 @@ namespace WindowsFormsApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(167, 0);
+            this.label1.Location = new System.Drawing.Point(166, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(412, 30);
             this.label1.TabIndex = 2;
@@ -392,7 +392,7 @@ namespace WindowsFormsApp
             this.idGrupoEntidadTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.idGrupoEntidadTextBox.Location = new System.Drawing.Point(49, 3);
             this.idGrupoEntidadTextBox.Name = "idGrupoEntidadTextBox";
-            this.idGrupoEntidadTextBox.Size = new System.Drawing.Size(112, 20);
+            this.idGrupoEntidadTextBox.Size = new System.Drawing.Size(111, 20);
             this.idGrupoEntidadTextBox.TabIndex = 1;
             // 
             // gruposEntidadesTableAdapter
